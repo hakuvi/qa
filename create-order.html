@@ -1,0 +1,43 @@
+app.post("/create-order", async (req, res) => {
+
+  try {
+
+    console.log("🔥 BODY:", req.body);
+
+    const { productId } = req.body;
+
+    if (!productId) {
+      return res.status(400).json({ error: "Missing productId" });
+    }
+
+    const product = products.find(p => p.id == productId);
+
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+
+    console.log("✅ Product:", product);
+
+    const options = {
+      amount: product.price * 100,
+      currency: "INR",
+      receipt: "receipt_" + Date.now()
+    };
+
+    const order = await razorpay.orders.create(options);
+
+    console.log("✅ Order:", order);
+
+    res.json({ order, product });
+
+  } catch (err) {
+
+    console.error("❌ ERROR:", err);
+
+    res.status(500).json({
+      error: err.message
+    });
+
+  }
+
+});

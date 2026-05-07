@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Payment Page</h2>
+
+<p id="name"></p>
+<p id="price"></p>
+
+<button onclick="payNow()">Pay Now</button>
+
+</div>
+
+<script>
+const data = JSON.parse(localStorage.getItem("paymentData"));
+
+if (!data) {
+    alert("No payment data");
+    window.location.href = "product.html";
+}
+
+document.getElementById("name").innerText = data.name;
+document.getElementById("price").innerText = "₹" + data.price;
+
+async function payNow() {
+
+    // Call backend API
+    const response = await fetch("http://localhost:5000/create-order", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            productId: data.id
+        })
+    });
+
+    const order = await response.json();
+
+    const options = {
+        key: "YOUR_RAZORPAY_KEY_ID",
+        amount: order.amount,
+        currency: "INR",
+        name: "My Website",
+        description: data.name,
+        order_id: order.id,
+
+        handler: async function (response) {
+
+            const verify = await fetch("http://localhost:5000/verify-payment", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    ...response,
+                    productId: data.id
+                })
+            });
+
+            const result = await verify.json();
+
+            if (result.success) {
+                window.location.href = "success.html";
+            } else {
+                alert("Payment failed");
+            }
+        }
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.open();
+}
+</script>
+
+</body>
+</html>

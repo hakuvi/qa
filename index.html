@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hakuvi | Digital Products</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<script>
+
+const user = localStorage.getItem("user");
+
+if(!user){
+window.location = "login.html";
+}
+
+</script>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+
+<a href="index.html">
+
+<img src="images/logo.jpg" alt="Hakuvi Logo">
+
+<span>Hakuvi</span>
+
+</a>
+
+</div>
+
+<nav>
+
+<a href="#products">Products</a>
+
+<a href="#about">About</a>
+
+<a href="#" id="user-name"></a>
+
+<a href="#" onclick="logout()">Logout</a>
+
+</nav>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Premium Digital Products</h1>
+
+<p>
+Transform your growth with high-quality digital products.
+Learn real skills and become confident enough to crack interviews.
+</p>
+
+<a href="#products" class="btn-primary">
+Explore Products
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- PRODUCTS -->
+
+<section id="products" class="products">
+
+<h2>Our Featured Products</h2>
+
+<div class="product-grid" id="product-list"></div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<h2>Why Choose Hakuvi?</h2>
+
+<p>
+
+We create high-value digital products designed to help you grow,
+earn, and build real results.
+
+Simple. Practical. Powerful.
+
+</p>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 Hakuvi. All rights reserved.</p>
+
+</footer>
+
+
+
+<script src="js/script.js"></script>
+
+
+
+<script>
+
+function logout(){
+
+localStorage.removeItem("user");
+
+alert("Logged out successfully");
+
+window.location = "login.html";
+
+}
+
+
+/* Show username in navbar */
+
+const username = localStorage.getItem("user");
+
+if(username){
+
+document.getElementById("user-name").innerText =
+"Hi, " + username;
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Download Product</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<section class="product-page">
+
+<div class="checkout-box">
+
+<h1>Purchase Successful 🎉</h1>
+
+<p>Your product is ready to download.</p>
+
+<a id="download-btn" class="buy-btn">Download Product</a>
+
+</div>
+
+</section>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+let file = "";
+
+if(id == 1){
+file = "downloads/sql.pdf";
+}
+
+if(id == 2){
+file = "downloads/python.pdf";
+}
+
+if(id == 3){
+file = "downloads/etl.pdf";
+}
+
+document.getElementById("download-btn").href = file;
+
+</script>
+
+</body>
+</html>

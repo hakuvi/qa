@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "SQL Theory Questions",
+    "description": "50 Basic SQL Theory Questions(MFA) for Beginner.",
+    "price": 1,
+    "image": "product1.png"
+  },
+  {
+    "id": 2,
+    "name": "Python Theory Questions",
+    "description": "50 Basic Python Theory Questions(MFA) for Beginner.",
+    "price": 1,
+    "image": "product2.png"
+  },
+  {
+    "id": 3,
+    "name": "ETL Theory Questions",
+    "description": "50 Basic ETL Theory questions(MFA) for beginner.",
+    "price": 1,
+    "image": "product3.png"
+  }
+]

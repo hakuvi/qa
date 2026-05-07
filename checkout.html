@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Hakuvi</title>
+<link rel="stylesheet" href="css/style.css">
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="images/logo.jpg" alt="Hakuvi Logo">
+    <span>Hakuvi</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<section class="product-page">
+
+<div class="checkout-box">
+
+<h1>Checkout</h1>
+<h2>Thanks for buying<h2>
+<p id="product-name-text"></p>
+<p id="price"></p>
+
+<h3>Total: <span id="total"></span></h3>
+
+<br>
+
+<button id="confirm-btn" class="buy-btn">Pay Now</button>
+
+</div>
+
+</section>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+let currentProduct = null;
+
+
+// 🔹 Load product securely from backend
+async function loadCheckout() {
+
+  console.log("Product ID:", id);
+
+  if (!id) {
+    alert("No product selected");
+    return;
+  }
+
+  try {
+
+    const res = await fetch(`http://localhost:3000/api/products/${id}`);
+    const product = await res.json();
+
+    if (!product || product.error) {
+      alert("Product not found");
+      return;
+    }
+
+    currentProduct = product;
+
+    document.getElementById("product-name-text").innerText =
+      "Product: " + product.name;
+
+    document.getElementById("price").innerText =
+      "Price: ₹" + product.price;
+
+    document.getElementById("total").innerText =
+      "₹" + product.price;
+
+  } catch (err) {
+    console.error("Load error:", err);
+    alert("Failed to load product");
+  }
+
+}
+
+loadCheckout();
+
+
+// 🔹 PAYMENT FLOW
+document.getElementById("confirm-btn").onclick = async function () {
+
+  try {
+
+    console.log("Starting payment for product:", id);
+
+    // 1. Create order
+    const res = await fetch("http://localhost:3000/create-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        productId: id
+      })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      console.error("Server error:", data);
+      alert("Server error: " + data.error);
+      return;
+    }
+
+    const order = data.order;
+    const product = data.product;
+
+    console.log("Order created:", order);
+
+    // 2. Razorpay popup
+    const options = {
+      key: "rzp_test_xxxxxxxx", // 🔥 replace with your real key
+      amount: order.amount,
+      currency: "INR",
+      name: "Hakuvi",
+      description: product.name,
+      order_id: order.id,
+
+      handler: async function (response) {
+
+        console.log("Payment response:", response);
+
+        // 3. Verify payment
+        const verifyRes = await fetch("http://localhost:3000/verify-payment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(response)
+        });
+
+        const result = await verifyRes.json();
+
+        if (result.success) {
+          window.location.href = "success.html?id=" + id;
+        } else {
+          alert("Payment verification failed");
+        }
+      },
+
+      theme: {
+        color: "#3399cc"
+      }
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.open();
+
+  } catch (err) {
+    console.error("Payment error:", err);
+    alert("Payment failed");
+  }
+
+};
+
+</script>
+
+</body>
+</html>

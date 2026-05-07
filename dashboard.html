@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | Hakuvi</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<script>
+
+const user = localStorage.getItem("user");
+
+if(!user){
+window.location = "login.html";
+}
+
+</script>
+
+
+<header>
+
+<div class="logo">
+<img src="images/logo.jpg">
+<span>Hakuvi</span>
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="#">Dashboard</a>
+<a href="#" onclick="logout()">Logout</a>
+
+</nav>
+
+</header>
+
+
+
+<section class="products">
+
+<h2>My Products</h2>
+
+<div id="my-products" class="product-grid"></div>
+
+</section>
+
+
+<script>
+
+const user = localStorage.getItem("user");
+
+fetch("/api/my-products?user=" + user)
+.then(res => res.json())
+.then(products => {
+
+const container =
+document.getElementById("my-products");
+
+container.innerHTML = "";
+
+products.forEach(product => {
+
+const card = document.createElement("div");
+
+card.className = "product-card";
+
+card.innerHTML = `
+
+<h3>${product.name}</h3>
+
+<p>${product.description}</p>
+
+<a href="downloads/${product.file}" class="btn-secondary">
+Download
+</a>
+
+`;
+
+container.appendChild(card);
+
+});
+
+});
+
+
+
+function logout(){
+
+localStorage.removeItem("user");
+
+window.location = "login.html";
+
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | Hakuvi</title>
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<div class="login-box">
+
+<h2>Login</h2>
+
+<p>Login to access your account</p>
+
+<form onsubmit="login(event)">
+
+<div class="input-group">
+<label>Username</label>
+<input id="username" placeholder="Enter username" required>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input id="password" type="password" placeholder="Enter password" required>
+</div>
+
+<button class="btn-login" type="submit">
+Login
+</button>
+
+</form>
+
+<p class="register-text">
+No account?
+<a href="register.html">Register</a>
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function login(event){
+
+event.preventDefault();
+
+const username =
+document.getElementById("username").value;
+
+const password =
+document.getElementById("password").value;
+
+fetch("/login",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body: JSON.stringify({
+username,
+password
+})
+
+})
+.then(res => res.json())
+.then(data => {
+
+if(data.success){
+
+/* save login session */
+localStorage.setItem("user", username);
+
+/* go to homepage */
+window.location = "index.html";
+
+}else{
+
+alert("Wrong username or password");
+
+}
+
+})
+.catch(err => {
+
+alert("Server error. Try again.");
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
