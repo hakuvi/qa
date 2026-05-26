@@ -380,3 +380,88 @@ margin-left:15px;
 }
 
 }
+/* ==========================
+   CONTACT SECTION
+========================== */
+
+.contact{
+padding:80px 10%;
+background:#ffffff;
+text-align:center;
+}
+
+.contact h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.contact p{
+max-width:700px;
+margin:0 auto 35px;
+color:#555;
+line-height:1.8;
+font-size:16px;
+}
+
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.contact-btn{
+display:inline-block;
+padding:14px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.contact-btn:hover{
+transform:translateY(-3px);
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+.whatsapp:hover{
+background:#1ebe5d;
+}
+
+.email{
+background:#764ba2;
+color:white;
+}
+
+.email:hover{
+background:#5b3d91;
+}
+
+/* FLOATING WHATSAPP */
+
+.floating-whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#25D366;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+text-decoration:none;
+box-shadow:0 4px 15px rgba(0,0,0,0.25);
+z-index:999;
+transition:0.3s;
+}
+
+.floating-whatsapp:hover{
+transform:scale(1.1);
+}
