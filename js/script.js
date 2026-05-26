@@ -1,44 +1,50 @@
 async function loadProducts() {
 
-const container = document.getElementById("product-list");
+    const container = document.getElementById("product-list");
 
-try {
+    try {
 
-const response = await fetch("/api/products");
-const products = await response.json();
+        const response = await fetch("./products.json");
 
-container.innerHTML = "";
+        if (!response.ok) {
+            throw new Error("Unable to load products");
+        }
 
-products.forEach(product => {
+        const products = await response.json();
 
-const card = document.createElement("div");
-card.className = "product-card";
+        container.innerHTML = "";
 
-card.innerHTML = `
+        products.forEach(product => {
 
-<h3>${product.name}</h3>
+            const card = document.createElement("div");
 
-<p>${product.description}</p>
+            card.className = "product-card";
 
-<p class="price">₹${product.price}</p>
+            card.innerHTML = `
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p class="price">₹${product.price}</p>
+                <a href="product.html?id=${product.id}" class="btn-secondary">
+                    View Details
+                </a>
+            `;
 
-<a href="product.html?id=${product.id}" class="btn-secondary">
-View Details
-</a>
+            container.appendChild(card);
 
-`;
+        });
 
-container.appendChild(card);
+    } catch (error) {
 
+        console.error("Error loading products:", error);
+
+        container.innerHTML = `
+            <div class="error-message">
+                Failed to load products.
+            </div>
+        `;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadProducts();
 });
-
-} catch(error) {
-
-console.error(error);
-container.innerHTML = "Failed to load products";
-
-}
-
-}
-
-loadProducts();
