@@ -1,27 +1,52 @@
 async function loadProduct() {
 
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
 
-  try {
+    try {
 
-    const res = await fetch(`/api/products/${id}`);
-    const product = await res.json();
+        const res = await fetch("./products.json");
 
-    document.getElementById("product-name").innerText = product.name;
-    document.getElementById("product-price").innerText = "₹" + product.price;
-    document.getElementById("product-description").innerText = product.description;
+        if (!res.ok) {
+            throw new Error("Failed to load products");
+        }
 
-    document.getElementById("product-image").src = "images/" + product.image;
+        const products = await res.json();
 
-    // ✅ ONLY SEND ID (SECURE)
-    document.getElementById("buy-btn").href =
-      `checkout.html?id=${product.id}`;
+        const product = products.find(
+            p => p.id === id
+        );
 
-  } catch (error) {
-    console.error(error);
-  }
+        if (!product) {
 
+            document.querySelector(".product-container").innerHTML =
+                "<h2>Product not found</h2>";
+
+            return;
+        }
+
+        document.getElementById("product-name").innerText =
+            product.name;
+
+        document.getElementById("product-price").innerText =
+            "₹" + product.price;
+
+        document.getElementById("product-description").innerText =
+            product.description;
+
+        document.getElementById("product-image").src =
+            "images/" + product.image;
+
+        document.getElementById("buy-btn").href =
+            `checkout.html?id=${product.id}`;
+
+    } catch (error) {
+
+        console.error(error);
+
+        document.querySelector(".product-container").innerHTML =
+            "<h2>Failed to load product</h2>";
+    }
 }
 
 loadProduct();
