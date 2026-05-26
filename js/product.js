@@ -5,7 +5,7 @@ async function loadProduct() {
 
     try {
 
-        const res = await fetch("./product.json");
+        const res = await fetch("product.json");
 
         if (!res.ok) {
             throw new Error("Failed to load products");
