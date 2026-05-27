@@ -472,3 +472,90 @@ transition:0.3s;
 .floating-whatsapp:hover{
 transform:scale(1.1);
 }
+/* ==========================
+   FEATURED PRODUCT SECTION
+========================== */
+
+.featured-product{
+padding:80px 10%;
+}
+
+.featured-content{
+background:linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+padding:50px;
+border-radius:25px;
+text-align:center;
+position:relative;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+animation:floatCard 3s ease-in-out infinite;
+}
+
+.featured-badge{
+display:inline-block;
+background:rgba(255,255,255,0.2);
+padding:8px 18px;
+border-radius:30px;
+font-size:14px;
+margin-bottom:20px;
+font-weight:600;
+backdrop-filter:blur(10px);
+}
+
+.featured-content h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+.featured-content p{
+max-width:700px;
+margin:0 auto 25px;
+line-height:1.8;
+}
+
+.featured-content ul{
+list-style:none;
+margin-bottom:30px;
+padding:0;
+}
+
+.featured-content ul li{
+margin-bottom:10px;
+font-size:17px;
+}
+
+.featured-btn{
+display:inline-block;
+padding:16px 34px;
+background:white;
+color:#764ba2;
+border-radius:40px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.featured-btn:hover{
+transform:translateY(-5px) scale(1.03);
+background:#f3f3f3;
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes floatCard{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-6px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
