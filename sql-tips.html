@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SQL Tips for Beginners | Hakuvi</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<meta name="description"
+content="Beginner-friendly SQL tips and interview preparation guide with examples. Learn SQL step by step with Hakuvi.">
+
+<meta name="keywords"
+content="SQL tips, SQL tutorial, SQL interview questions, beginner SQL guide">
+<style>
+
+.sql-tips{
+padding:80px 10%;
+background:#f8f9fc;
+}
+
+.sql-tips h1{
+font-size:42px;
+margin-bottom:20px;
+text-align:center;
+color:#222;
+}
+
+.sql-tips p.intro{
+text-align:center;
+max-width:800px;
+margin:0 auto 50px;
+color:#555;
+line-height:1.8;
+}
+
+.tip-card{
+background:white;
+padding:30px;
+border-radius:15px;
+margin-bottom:30px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.tip-card h2{
+margin-bottom:15px;
+color:#764ba2;
+}
+
+.tip-card p{
+margin-bottom:15px;
+color:#555;
+line-height:1.8;
+}
+
+.code-box{
+background:#111;
+color:#00ff88;
+padding:20px;
+border-radius:10px;
+overflow-x:auto;
+font-family:monospace;
+margin-top:15px;
+}
+
+.back-home{
+display:inline-block;
+margin-top:40px;
+padding:14px 28px;
+background:#764ba2;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:600;
+transition:0.3s;
+}
+
+.back-home:hover{
+background:#5b3d91;
+}
+
+@media(max-width:768px){
+
+.sql-tips h1{
+font-size:32px;
+}
+
+.tip-card{
+padding:20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<a href="index.html">
+
+<img src="images/logo.jpg" alt="Hakuvi Logo" width="40">
+
+<span>Hakuvi</span>
+
+</a>
+
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="#tips">SQL Tips</a>
+
+</nav>
+
+</header>
+
+<section class="sql-tips" id="tips">
+
+<h1>SQL Tips for Beginners</h1>
+
+<p class="intro">
+Learning SQL becomes easy when you focus on understanding the basics step by step.
+These beginner-friendly SQL tips will help you improve your interview preparation
+and become more confident while writing queries.
+</p>
+
+<!-- TIP 1 -->
+
+<div class="tip-card">
+
+<h2>1. Always Learn SELECT First</h2>
+
+<p>
+The SELECT statement is the foundation of SQL.
+It is used to retrieve data from a table.
+Before learning joins or complex queries, understand SELECT properly.
+</p>
+
+<div class="code-box">
+
+SELECT * FROM employees;
+
+</div>
+
+</div>
+
+<!-- TIP 2 -->
+
+<div class="tip-card">
+
+<h2>2. Use WHERE to Filter Data</h2>
+
+<p>
+The WHERE clause helps you filter specific rows based on conditions.
+This is one of the most commonly used SQL concepts in interviews.
+</p>
+
+<div class="code-box">
+
+SELECT * FROM employees
+WHERE department = 'IT';
+
+</div>
+
+</div>
+
+<!-- TIP 3 -->
+
+<div class="tip-card">
+
+<h2>3. Practice ORDER BY</h2>
+
+<p>
+ORDER BY is used to sort data in ascending or descending order.
+Sorting data is useful in reports and interview scenarios.
+</p>
+
+<div class="code-box">
+
+SELECT * FROM employees
+ORDER BY salary DESC;
+
+</div>
+
+</div>
+
+<!-- TIP 4 -->
+
+<div class="tip-card">
+
+<h2>4. Understand GROUP BY Clearly</h2>
+
+<p>
+GROUP BY helps combine rows with similar values and perform calculations like COUNT, SUM and AVG.
+</p>
+
+<div class="code-box">
+
+SELECT department,
+COUNT(*) AS total_employees
+FROM employees
+GROUP BY department;
+
+</div>
+
+</div>
+
+<!-- TIP 5 -->
+
+<div class="tip-card">
+
+<h2>5. Learn Joins Slowly</h2>
+
+<p>
+Joins are very important for interviews.
+Start with INNER JOIN before learning LEFT JOIN and RIGHT JOIN.
+</p>
+
+<div class="code-box">
+
+SELECT employees.name,
+departments.department_name
+
+FROM employees
+
+INNER JOIN departments
+ON employees.department_id =
+departments.id;
+
+</div>
+
+</div>
+
+<!-- TIP 6 -->
+
+<div class="tip-card">
+
+<h2>6. Practice Daily</h2>
+
+<p>
+SQL is a practical skill.
+Even practicing for 30 minutes daily can improve your confidence quickly.
+Focus on writing queries instead of only watching tutorials.
+</p>
+
+</div>
+
+<!-- TIP 7 -->
+
+<div class="tip-card">
+
+<h2>7. Learn Interview-Based Questions</h2>
+
+<p>
+Most SQL interviews focus on:
+</p>
+
+<ul>
+<li>Joins</li>
+<li>Group By</li>
+<li>Subqueries</li>
+<li>Window Functions</li>
+<li>Primary Key vs Foreign Key</li>
+<li>Normalization</li>
+<li>Delete vs Truncate vs Drop</li>
+</ul>
+
+</div>
+
+<center>
+
+<a href="index.html" class="back-home">
+Back to Home
+</a>
+
+</center>
+
+</section>
+
+<footer>
+
+<p>© 2026 Hakuvi. All rights reserved.</p>
+
+</footer>
+
+</body>
+
+</html>
