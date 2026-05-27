@@ -1,3 +1,8 @@
+/* =========================================================
+   HAKUVI - COMPLETE MODERN CSS
+   Premium Educational Website UI
+========================================================= */
+
 /* =========================
    GLOBAL
 ========================= */
@@ -170,18 +175,22 @@ text-decoration:none;
 color:#e2e8f0;
 font-weight:600;
 position:relative;
-transition:0.3s ease;
 font-size:15px;
 }
 
 nav a::after{
 content:"";
+
 position:absolute;
+
 left:0;
 bottom:-6px;
+
 width:0%;
 height:2px;
+
 background:#8b5cf6;
+
 transition:0.3s;
 }
 
@@ -225,6 +234,8 @@ padding:120px 10% 80px;
 overflow:hidden;
 position:relative;
 }
+
+/* animated glow */
 
 .hero::before{
 content:"";
@@ -294,6 +305,27 @@ z-index:2;
 
 .hero-content{
 flex:1;
+}
+
+.featured-badge{
+display:inline-block;
+
+padding:10px 22px;
+
+background:rgba(255,255,255,0.12);
+
+border:1px solid rgba(255,255,255,0.2);
+
+backdrop-filter:blur(10px);
+
+border-radius:50px;
+
+color:white;
+
+font-size:14px;
+font-weight:600;
+
+margin-bottom:28px;
 }
 
 .hero-content h1{
@@ -476,6 +508,8 @@ position:relative;
 z-index:1;
 }
 
+/* PRODUCT CARD */
+
 .product-card{
 background:rgba(255,255,255,0.92);
 
@@ -499,6 +533,8 @@ backdrop-filter:blur(14px);
 
 border:1px solid rgba(255,255,255,0.4);
 }
+
+/* premium border */
 
 .product-card::after{
 content:"";
@@ -525,6 +561,8 @@ mask-composite:exclude;
 
 pointer-events:none;
 }
+
+/* shine effect */
 
 .product-card::before{
 content:"";
@@ -562,6 +600,8 @@ border-color:
 rgba(139,92,246,0.35);
 }
 
+/* image */
+
 .product-card img{
 width:100%;
 height:220px;
@@ -580,6 +620,8 @@ box-shadow:
 transform:scale(1.03);
 }
 
+/* title */
+
 .product-card h3{
 font-size:24px;
 margin-bottom:16px;
@@ -592,12 +634,16 @@ color:#764ba2;
 margin-right:8px;
 }
 
+/* description */
+
 .product-card p{
 color:#666;
 line-height:1.9;
 margin-bottom:18px;
 font-size:15px;
 }
+
+/* price */
 
 .price{
 font-weight:700;
@@ -753,6 +799,8 @@ color:#764ba2;
 font-size:18px;
 }
 
+/* BUY BUTTON */
+
 .buy-btn{
 display:inline-flex;
 align-items:center;
@@ -780,4 +828,530 @@ transform:translateY(-5px);
 
 box-shadow:
 0 18px 40px rgba(118,75,162,0.35);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about{
+padding:120px 10%;
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#f8fafc
+);
+
+text-align:center;
+
+position:relative;
+overflow:hidden;
+
+border-top:
+1px solid rgba(255,255,255,0.4);
+}
+
+.about::before{
+content:"";
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:
+rgba(139,92,246,0.08);
+
+filter:blur(120px);
+
+top:-150px;
+left:-150px;
+
+z-index:0;
+}
+
+.about h2{
+font-size:48px;
+margin-bottom:30px;
+
+color:#111827;
+
+position:relative;
+z-index:1;
+}
+
+.about p{
+max-width:900px;
+
+margin:0 auto 28px;
+
+color:#555;
+
+font-size:18px;
+line-height:2;
+
+position:relative;
+z-index:1;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact{
+padding:120px 10%;
+
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#1e293b
+);
+
+text-align:center;
+
+position:relative;
+overflow:hidden;
+}
+
+.contact::before{
+content:"";
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:
+rgba(139,92,246,0.2);
+
+filter:blur(120px);
+
+top:-120px;
+right:-120px;
+
+z-index:0;
+}
+
+.contact h2{
+font-size:48px;
+margin-bottom:25px;
+
+color:white;
+
+position:relative;
+z-index:1;
+}
+
+.contact p{
+max-width:800px;
+
+margin:0 auto 45px;
+
+line-height:2;
+font-size:18px;
+
+color:#cbd5e1;
+
+position:relative;
+z-index:1;
+}
+
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:22px;
+flex-wrap:wrap;
+
+position:relative;
+z-index:1;
+}
+
+.contact-btn{
+display:inline-flex;
+align-items:center;
+gap:12px;
+
+padding:16px 34px;
+
+border-radius:50px;
+
+text-decoration:none;
+font-weight:700;
+}
+
+/* whatsapp */
+
+.whatsapp{
+background:#25D366;
+color:white;
+
+box-shadow:
+0 12px 25px rgba(37,211,102,0.28);
+}
+
+/* email */
+
+.email{
+background:
+linear-gradient(135deg,#8b5cf6,#6366f1);
+
+color:white;
+
+box-shadow:
+0 12px 25px rgba(99,102,241,0.3);
+}
+
+.contact-btn:hover{
+transform:
+translateY(-6px)
+scale(1.03);
+}
+
+/* =========================
+   TIPS PAGE
+========================= */
+
+.tips-page{
+padding:100px 10%;
+background:#f4f7fb;
+}
+
+.tips-page h1{
+font-size:52px;
+margin-bottom:25px;
+text-align:center;
+color:#111827;
+}
+
+.intro{
+text-align:center;
+max-width:850px;
+margin:0 auto 60px;
+line-height:1.9;
+color:#555;
+font-size:18px;
+}
+
+/* =========================
+   TIP CARD
+========================= */
+
+.tip-card{
+background:white;
+padding:35px;
+border-radius:24px;
+margin-bottom:35px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,0.05);
+}
+
+.tip-card:hover{
+transform:translateY(-8px);
+
+box-shadow:
+0 18px 40px rgba(118,75,162,0.15);
+}
+
+/* =========================
+   CODE BOX
+========================= */
+
+.code-box{
+background:#0d1117;
+color:#58ffb1;
+
+padding:20px;
+
+border-radius:14px;
+
+overflow-x:auto;
+
+font-family:'Courier New', monospace;
+
+font-size:15px;
+line-height:1.8;
+
+white-space:pre-wrap;
+
+border-left:5px solid #764ba2;
+
+box-shadow:
+0 4px 15px rgba(0,0,0,0.15);
+
+margin-top:20px;
+}
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.floating-whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+
+width:65px;
+height:65px;
+
+background:#25D366;
+color:white;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:30px;
+
+text-decoration:none;
+
+box-shadow:
+0 10px 25px rgba(37,211,102,0.35);
+
+z-index:999;
+}
+
+.floating-whatsapp:hover{
+transform:scale(1.1);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+padding:70px 20px 40px;
+
+background:#020617;
+
+color:#cbd5e1;
+
+text-align:center;
+
+position:relative;
+overflow:hidden;
+}
+
+footer::before{
+content:"";
+
+position:absolute;
+
+top:0;
+left:50%;
+
+transform:translateX(-50%);
+
+width:80%;
+height:1px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(139,92,246,0.6),
+transparent
+);
+}
+
+.footer-links{
+display:flex;
+justify-content:center;
+gap:30px;
+
+flex-wrap:wrap;
+
+margin-bottom:28px;
+}
+
+.footer-links a{
+color:#cbd5e1;
+
+text-decoration:none;
+
+font-weight:500;
+
+position:relative;
+}
+
+.footer-links a::after{
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-5px;
+
+width:0%;
+height:2px;
+
+background:#8b5cf6;
+
+transition:0.3s;
+}
+
+.footer-links a:hover{
+color:white;
+}
+
+.footer-links a:hover::after{
+width:100%;
+}
+
+footer p{
+color:#94a3b8;
+line-height:1.9;
+font-size:15px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+.hero{
+padding-top:140px;
+}
+
+.hero-wrapper{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-content h1{
+font-size:42px;
+}
+
+.hero-content p{
+font-size:17px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.hero-image img{
+max-width:340px;
+margin-top:20px;
+}
+
+}
+
+/* MOBILE NAV */
+
+@media(max-width:900px){
+
+.menu-toggle{
+display:block;
+}
+
+nav{
+position:absolute;
+
+top:100%;
+left:0;
+
+width:100%;
+
+background:#0f172a;
+
+flex-direction:column;
+
+align-items:center;
+
+padding:25px 0;
+
+gap:22px;
+
+display:none;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,0.15);
+}
+
+nav.active{
+display:flex;
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.products,
+.about,
+.contact,
+.tips-page,
+.product-page{
+padding:80px 20px;
+}
+
+.products h2,
+.about h2,
+.contact h2,
+.tips-page h1{
+font-size:34px;
+}
+
+.hero-content h1{
+font-size:38px;
+}
+
+.hero-content p,
+.about p,
+.contact p{
+font-size:16px;
+line-height:1.9;
+}
+
+.product-card{
+padding:24px;
+}
+
+.product-container{
+flex-direction:column;
+text-align:center;
+padding:30px;
+}
+
+.product-image img{
+width:100%;
+max-width:320px;
+}
+
+.product-tags{
+justify-content:center;
+}
+
+.product-info{
+text-align:center;
+}
+
+.product-features li{
+justify-content:center;
+}
+
+header{
+padding:18px 20px;
+}
+
+.logo a{
+font-size:20px;
+}
+
+.contact-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.section-subtitle{
+font-size:16px;
+margin-bottom:45px;
+}
+
 }
