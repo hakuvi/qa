@@ -56,12 +56,17 @@ margin-bottom:15px;
 }
 
 .code-box{
-background:#111;
-color:#00ff88;
+background:#0d1117;
+color:#58ffb1;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
 overflow-x:auto;
-font-family:monospace;
+font-family:'Courier New', monospace;
+font-size:15px;
+line-height:1.8;
+white-space:pre-wrap;
+border-left:5px solid #764ba2;
+box-shadow:0 4px 15px rgba(0,0,0,0.15);
 }
 
 </style>
@@ -113,13 +118,13 @@ Variables store values in Python.
 Understanding variables is the first step in programming.
 </p>
 
-<div class="code-box">
+<pre class="code-box"><code>
 name = "Hakuvi"
 age = 25
 
 print(name)
 print(age)
-</div>
+</code></pre>
 
 </div>
 
@@ -131,16 +136,14 @@ print(age)
 Conditions help programs make decisions.
 </p>
 
-<div class="code-box">
+<pre class="code-box"><code>
 age = 18
 
 if age >= 18:
-  
     print("Eligible")
 else:
-   
     print("Not Eligible")
-</div>
+</code></pre>
 
 </div>
 
@@ -152,11 +155,10 @@ else:
 Loops help repeat tasks automatically.
 </p>
 
-<div class="code-box">
+<pre class="code-box"><code>
 for i in range(5):
-   
     print(i)
-</div>
+</code></pre>
 
 </div>
 
@@ -168,13 +170,13 @@ for i in range(5):
 Functions help organize reusable code.
 </p>
 
-<div class="code-box">
+<pre class="code-box"><code>
 def greet():
    
     print("Welcome to Hakuvi")
 
 greet()
-</div>
+</code></pre>
 
 </div>
 
