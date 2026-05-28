@@ -1,1357 +1,405 @@
-/* =========================================================
-   HAKUVI - COMPLETE MODERN CSS
-   Premium Educational Website UI
-========================================================= */
-
-/* =========================
-   GLOBAL
-========================= */
-
-html{
-scroll-behavior:smooth;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#f4f7fb;
-color:#222;
-line-height:1.7;
-overflow-x:hidden;
-
-animation:fadeIn 0.8s ease;
-}
-
-/* smooth transitions */
-
-a,
-button,
-img,
-.product-card,
-.buy-btn{
-transition:all 0.3s ease;
-}
-
-/* text selection */
-
-::selection{
-background:#764ba2;
-color:white;
-}
-
-/* scrollbar */
-
-::-webkit-scrollbar{
-width:10px;
-}
-
-::-webkit-scrollbar-track{
-background:#edf2f7;
-}
-
-::-webkit-scrollbar-thumb{
-background:linear-gradient(
-180deg,
-#764ba2,
-#667eea
-);
-
-border-radius:20px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-background:#764ba2;
-}
-
-/* fade animation */
-
-@keyframes fadeIn{
-
-from{
-opacity:0;
-transform:translateY(10px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-/* image fade */
-
-img{
-opacity:0;
-animation:imageFade 0.8s ease forwards;
-}
-
-@keyframes imageFade{
-to{
-opacity:1;
-}
-}
-
-section{
-position:relative;
-z-index:1;
-}
-
-/* =========================
-   CONTAINER WIDTHS
-========================= */
-
-.products,
-.about,
-.contact,
-.hero-wrapper,
-.product-container{
-max-width:1400px;
-margin:auto;
-}
-
-/* =========================
-   LOGO
-========================= */
-
-.logo a{
-display:flex;
-align-items:center;
-text-decoration:none;
-color:white;
-font-weight:700;
-font-size:24px;
-}
-
-.logo img{
-width:42px;
-height:42px;
-margin-right:10px;
-object-fit:cover;
-border-radius:50%;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:18px 10%;
+```html
+<!DOCTYPE html>
+<html lang="en">
 
-background:rgba(15,23,42,0.78);
+<head>
 
-backdrop-filter:blur(18px) saturate(180%);
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-position:sticky;
-top:0;
-z-index:1000;
+<title>
+Hakuvi | SQL, ETL & Python Interview Hub
+</title>
 
-border-bottom:1px solid rgba(255,255,255,0.08);
+<meta name="description"
+content="Daily SQL, ETL and Python interview questions, practical scenarios and beginner-friendly learning resources.">
 
-box-shadow:0 8px 30px rgba(0,0,0,0.08);
-}
+<link rel="stylesheet" href="css/style.css">
 
-/* =========================
-   NAVBAR
-========================= */
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
-nav{
-display:flex;
-align-items:center;
-gap:22px;
-}
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-nav a{
-text-decoration:none;
-color:#e2e8f0;
-font-weight:600;
-position:relative;
-font-size:15px;
-}
+</head>
 
-nav a::after{
-content:"";
+<body>
 
-position:absolute;
+<!-- =========================
+HEADER
+========================= -->
 
-left:0;
-bottom:-6px;
+<header>
 
-width:0%;
-height:2px;
+<div class="logo">
 
-background:#8b5cf6;
+<a href="index.html">
 
-transition:0.3s;
-}
+<img src="images/logo.jpg" alt="Hakuvi Logo">
 
-nav a:hover{
-color:white;
-}
+<span>Hakuvi</span>
 
-nav a:hover::after{
-width:100%;
-}
+</a>
 
-/* =========================
-   HAMBURGER MENU
-========================= */
+</div>
 
-.menu-toggle{
-display:none;
-font-size:28px;
-color:white;
-cursor:pointer;
-}
+<nav>
 
-/* =========================
-   HERO SECTION
-========================= */
+<a href="#daily-question">Daily Question</a>
 
-.hero{
-min-height:100vh;
+<a href="#latest-questions">Latest Questions</a>
 
-background:
-radial-gradient(circle at top left,#8f6bff 0%,transparent 35%),
-radial-gradient(circle at bottom right,#00c6ff 0%,transparent 30%),
-linear-gradient(135deg,#0f172a,#1e293b);
+<a href="#categories">Categories</a>
 
-display:flex;
-align-items:center;
-justify-content:center;
+<a href="#blogs">Blogs</a>
 
-padding:120px 10% 80px;
+<a href="#contact">Contact</a>
 
-overflow:hidden;
-position:relative;
-}
+</nav>
 
-/* animated glow */
+</header>
 
-.hero::before{
-content:"";
+<!-- =========================
+HERO SECTION
+========================= -->
 
-position:absolute;
+<section class="hero">
 
-width:500px;
-height:500px;
+<div class="hero-wrapper">
 
-background:rgba(255,255,255,0.05);
+<div class="hero-content">
 
-border-radius:50%;
+<span class="featured-badge">
+🚀 Daily Interview Preparation Platform
+</span>
 
-top:-120px;
-left:-120px;
+<h1>
+Master SQL, ETL & Python Interviews
+</h1>
 
-animation:floatBlob 8s ease-in-out infinite;
-}
+<p>
+Daily interview questions, practical scenarios,
+beginner-friendly explanations and real-world learning
+resources for QA and data professionals.
+</p>
 
-.hero::after{
-content:"";
+<div class="hero-buttons">
 
-position:absolute;
+<a href="#latest-questions"
+class="btn-primary">
 
-width:700px;
-height:700px;
+Explore Questions
 
-background:rgba(139,92,246,0.12);
+</a>
 
-filter:blur(120px);
+<a href="#daily-question"
+class="btn-secondary">
 
-right:-200px;
-top:-100px;
+Daily Question
 
-z-index:1;
-}
+</a>
 
-@keyframes floatBlob{
+</div>
 
-0%{
-transform:translateY(0px);
-}
+</div>
 
-50%{
-transform:translateY(30px);
-}
+<div class="hero-image">
 
-100%{
-transform:translateY(0px);
-}
+<img src="images/hero.png"
+alt="Interview Learning">
 
-}
+</div>
 
-.hero-wrapper{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:60px;
+</div>
 
-width:100%;
+</section>
 
-position:relative;
-z-index:2;
-}
+<!-- =========================
+DAILY QUESTION
+========================= -->
 
-/* HERO CONTENT */
+<section id="daily-question"
+class="products">
 
-.hero-content{
-flex:1;
-}
+<h2>
+🔥 Today's Interview Question
+</h2>
 
-.featured-badge{
-display:inline-block;
+<div class="product-grid">
 
-padding:10px 22px;
+<div class="product-card featured-content">
 
-background:rgba(255,255,255,0.12);
+<div class="question-category">
+SQL
+</div>
 
-border:1px solid rgba(255,255,255,0.2);
+<h3>
+What is the difference between DELETE,
+TRUNCATE and DROP?
+</h3>
 
-backdrop-filter:blur(10px);
+<p>
+One of the most important SQL interview questions
+explained with examples and practical scenarios.
+</p>
 
-border-radius:50px;
+<a href="#"
+class="btn-primary">
 
-color:white;
+Read Full Explanation
 
-font-size:14px;
-font-weight:600;
+</a>
 
-margin-bottom:28px;
-}
+</div>
 
-.hero-content h1{
-font-size:58px;
-line-height:1.15;
-margin-bottom:25px;
-font-weight:700;
-color:white;
-}
+</div>
 
-.hero-content p{
-font-size:18px;
-line-height:1.9;
+</section>
 
-max-width:650px;
+<!-- =========================
+LATEST QUESTIONS
+========================= -->
 
-margin-bottom:35px;
+<section id="latest-questions"
+class="products">
 
-color:#dbe4f0;
-}
+<h2>
+Latest Interview Questions
+</h2>
 
-/* HERO IMAGE */
+<p class="section-subtitle">
 
-.hero-image{
-flex:1;
-display:flex;
-justify-content:center;
-align-items:center;
-}
+Daily SQL, ETL and Python interview questions,
+real-world scenarios and beginner-friendly explanations.
 
-.hero-image img{
-width:min(100%,520px);
+</p>
 
-animation:floating 4s ease-in-out infinite;
-}
+<div class="product-grid"
+id="questions-container">
 
-@keyframes floating{
+</div>
 
-0%{
-transform:translateY(0px);
-}
+</section>
 
-50%{
-transform:translateY(-15px);
-}
+<!-- =========================
+CATEGORIES
+========================= -->
 
-100%{
-transform:translateY(0px);
-}
+<section id="categories"
+class="products">
 
-}
+<h2>
+Popular Categories
+</h2>
 
-/* =========================
-   BUTTONS
-========================= */
+<div class="product-grid">
 
-.btn-primary,
-.btn-secondary,
-.buy-btn,
-.contact-btn{
-cursor:pointer;
-}
+<div class="product-card">
 
-.btn-primary{
-display:inline-block;
+<h3>
+<i class="fa-solid fa-database"></i>
 
-padding:16px 36px;
+SQL Questions
 
-background:
-linear-gradient(135deg,#8b5cf6,#6366f1);
+</h3>
 
-color:white;
+<p>
+Learn SQL interview concepts, joins, window functions,
+queries and practical database scenarios.
+</p>
 
-border-radius:50px;
+</div>
 
-text-decoration:none;
+<div class="product-card">
 
-font-weight:700;
+<h3>
+<i class="fa-solid fa-server"></i>
 
-box-shadow:
-0 12px 30px rgba(99,102,241,0.35);
-}
+ETL Scenarios
 
-.btn-primary:hover{
-transform:translateY(-5px) scale(1.03);
+</h3>
 
-box-shadow:
-0 18px 40px rgba(99,102,241,0.45);
-}
+<p>
+Understand ETL testing concepts, validation,
+incremental loading and real-world scenarios.
+</p>
 
-.btn-secondary{
-display:inline-block;
+</div>
 
-padding:12px 26px;
+<div class="product-card">
 
-background:
-linear-gradient(135deg,#764ba2,#667eea);
+<h3>
+<i class="fa-brands fa-python"></i>
 
-color:white;
+Python Basics
 
-text-decoration:none;
+</h3>
 
-border-radius:30px;
+<p>
+Practice Python interview questions,
+coding basics and automation concepts.
+</p>
 
-font-weight:600;
+</div>
 
-box-shadow:
-0 10px 20px rgba(118,75,162,0.25);
-}
+</div>
 
-.btn-secondary:hover{
-transform:translateY(-4px);
+</section>
 
-box-shadow:
-0 15px 30px rgba(118,75,162,0.35);
-}
+<!-- =========================
+RECENT BLOGS
+========================= -->
 
-/* =========================
-   PRODUCTS SECTION
-========================= */
+<section id="blogs"
+class="products">
 
-.products{
-padding:100px 10%;
-text-align:center;
-background:#f8fafc;
+<h2>
+Recent Blogs
+</h2>
 
-position:relative;
-overflow:hidden;
-}
+<div class="product-grid">
 
-.products::before{
-content:"";
+<div class="product-card">
 
-position:absolute;
+<h3>
+Top 10 SQL Interview Questions
+</h3>
 
-width:500px;
-height:500px;
+<p>
+Important SQL interview questions every QA
+professional should prepare before interviews.
+</p>
 
-background:rgba(139,92,246,0.06);
+<a href="#"
+class="btn-secondary">
 
-filter:blur(120px);
+Read Blog
 
-top:-150px;
-right:-150px;
+</a>
 
-z-index:0;
-}
+</div>
 
-.products h2{
-font-size:42px;
-margin-bottom:20px;
-color:#111827;
+<div class="product-card">
 
-position:relative;
-z-index:1;
-}
+<h3>
+ETL Testing Real-Time Scenarios
+</h3>
 
-.section-subtitle{
-max-width:750px;
+<p>
+Learn practical ETL testing interview
+scenarios with beginner-friendly explanations.
+</p>
 
-margin:0 auto 60px;
+<a href="#"
+class="btn-secondary">
 
-font-size:17px;
-line-height:1.9;
+Read Blog
 
-color:#666;
+</a>
 
-position:relative;
-z-index:1;
-}
+</div>
 
-.product-grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
+<div class="product-card">
 
-gap:35px;
+<h3>
+Python for QA Beginners
+</h3>
 
-position:relative;
-z-index:1;
-}
+<p>
+Simple Python concepts and coding examples
+useful for testers and automation engineers.
+</p>
 
-/* PRODUCT CARD */
+<a href="#"
+class="btn-secondary">
 
-.product-card{
-background:rgba(255,255,255,0.92);
+Read Blog
 
-padding:32px;
+</a>
 
-border-radius:26px;
+</div>
 
-box-shadow:
-0 10px 30px rgba(0,0,0,0.05);
+</div>
 
-position:relative;
-overflow:hidden;
+</section>
 
-display:flex;
-flex-direction:column;
-justify-content:space-between;
+<!-- =========================
+CONTACT
+========================= -->
 
-min-height:100%;
+<section id="contact"
+class="contact">
 
-backdrop-filter:blur(14px);
+<h2>
+Connect With Hakuvi
+</h2>
 
-border:1px solid rgba(255,255,255,0.4);
-}
+<p>
+Stay updated with daily interview questions,
+learning resources and practical QA content.
+</p>
 
-/* premium border */
+<div class="contact-buttons">
 
-.product-card::after{
-content:"";
+<a href="https://wa.me/918110031533"
+target="_blank"
+class="contact-btn whatsapp">
 
-position:absolute;
-inset:0;
+<i class="fa-brands fa-whatsapp"></i>
 
-border-radius:26px;
-padding:1px;
+WhatsApp
 
-background:linear-gradient(
-135deg,
-rgba(139,92,246,0.25),
-rgba(0,198,255,0.12)
-);
+</a>
 
--webkit-mask:
-linear-gradient(#fff 0 0) content-box,
-linear-gradient(#fff 0 0);
+<a href="mailto:how2to1994@gmail.com"
+class="contact-btn email">
 
--webkit-mask-composite:xor;
+<i class="fa-solid fa-envelope"></i>
 
-mask-composite:exclude;
+Email
 
-pointer-events:none;
-}
+</a>
 
-/* shine effect */
+</div>
 
-.product-card::before{
-content:"";
+</section>
 
-position:absolute;
-top:0;
-left:-100%;
+<!-- =========================
+FOOTER
+========================= -->
 
-width:100%;
-height:100%;
+<footer>
 
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.35),
-transparent
-);
+<div class="footer-links">
 
-transition:0.9s;
-}
+<a href="#">SQL</a>
 
-.product-card:hover::before{
-left:100%;
-}
+<a href="#">ETL</a>
 
-.product-card:hover{
-transform:
-translateY(-12px)
-scale(1.015);
+<a href="#">Python</a>
 
-box-shadow:
-0 22px 50px rgba(118,75,162,0.22);
+<a href="#">Blogs</a>
 
-border-color:
-rgba(139,92,246,0.35);
-}
+<a href="#">Contact</a>
 
-/* image */
+</div>
 
-.product-card img{
-width:100%;
-height:220px;
+<p>
+Built for Daily Learning 🚀
+</p>
 
-object-fit:cover;
+<br>
 
-border-radius:18px;
+<p>
+© 2026 Hakuvi. All rights reserved.
+</p>
 
-margin-bottom:22px;
+</footer>
 
-box-shadow:
-0 20px 40px rgba(15,23,42,0.18);
-}
+<script src="js/script.js"></script>
 
-.product-card:hover img{
-transform:scale(1.03);
-}
+</body>
 
-/* title */
-
-.product-card h3{
-font-size:24px;
-margin-bottom:16px;
-color:#111827;
-line-height:1.4;
-}
-
-.product-card h3 i{
-color:#764ba2;
-margin-right:8px;
-}
-
-/* description */
-
-.product-card p{
-color:#666;
-line-height:1.9;
-margin-bottom:18px;
-font-size:15px;
-}
-
-/* price */
-
-.price{
-font-weight:700;
-font-size:26px;
-color:#764ba2;
-margin-bottom:24px;
-}
-
-/* =========================
-   PRODUCT TAGS
-========================= */
-
-.product-tags{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-bottom:25px;
-}
-
-.product-tags span{
-background:#eef2ff;
-color:#764ba2;
-
-padding:8px 16px;
-
-border-radius:30px;
-
-font-size:14px;
-font-weight:600;
-
-box-shadow:
-0 4px 12px rgba(118,75,162,0.08);
-}
-
-.product-tags span:hover{
-background:#764ba2;
-color:white;
-transform:translateY(-2px);
-}
-
-/* =========================
-   PRODUCT PAGE
-========================= */
-
-.product-page{
-padding:100px 10%;
-background:#f4f7fb;
-}
-
-.product-container{
-position:relative;
-overflow:hidden;
-
-display:flex;
-flex-wrap:wrap;
-gap:50px;
-
-align-items:center;
-justify-content:center;
-
-background:white;
-
-padding:50px;
-
-border-radius:30px;
-
-box-shadow:
-0 20px 40px rgba(0,0,0,0.06);
-}
-
-.product-container::before{
-content:"";
-
-position:absolute;
-
-top:0;
-left:-100%;
-
-width:100%;
-height:100%;
-
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.18),
-transparent
-);
-
-transition:1s;
-}
-
-.product-container:hover::before{
-left:100%;
-}
-
-.product-image img{
-width:380px;
-
-border-radius:20px;
-
-box-shadow:
-0 20px 40px rgba(15,23,42,0.18);
-}
-
-.product-image img:hover{
-transform:scale(1.03);
-}
-
-.product-info{
-max-width:520px;
-}
-
-.product-info h1{
-font-size:42px;
-margin-bottom:18px;
-line-height:1.2;
-color:#111827;
-}
-
-.product-price{
-font-size:32px;
-font-weight:700;
-color:#764ba2;
-margin-bottom:20px;
-}
-
-.product-description{
-margin-bottom:28px;
-color:#555;
-line-height:1.9;
-font-size:17px;
-}
-
-.product-features{
-margin-bottom:35px;
-padding-left:0;
-list-style:none;
-}
-
-.product-features li{
-margin-bottom:14px;
-
-display:flex;
-align-items:center;
-gap:12px;
-
-font-size:16px;
-color:#444;
-}
-
-.product-features i{
-color:#764ba2;
-font-size:18px;
-}
-
-/* BUY BUTTON */
-
-.buy-btn{
-display:inline-flex;
-align-items:center;
-gap:10px;
-
-padding:16px 36px;
-
-background:
-linear-gradient(135deg,#764ba2,#667eea);
-
-color:white;
-
-text-decoration:none;
-
-border-radius:40px;
-
-font-weight:700;
-
-box-shadow:
-0 12px 30px rgba(118,75,162,0.25);
-}
-
-.buy-btn:hover{
-transform:translateY(-5px);
-
-box-shadow:
-0 18px 40px rgba(118,75,162,0.35);
-}
-
-/* =========================
-   ABOUT SECTION
-========================= */
-
-.about{
-padding:120px 10%;
-
-background:
-linear-gradient(
-135deg,
-#ffffff,
-#f8fafc
-);
-
-text-align:center;
-
-position:relative;
-overflow:hidden;
-
-border-top:
-1px solid rgba(255,255,255,0.4);
-}
-
-.about::before{
-content:"";
-
-position:absolute;
-
-width:500px;
-height:500px;
-
-background:
-rgba(139,92,246,0.08);
-
-filter:blur(120px);
-
-top:-150px;
-left:-150px;
-
-z-index:0;
-}
-
-.about h2{
-font-size:48px;
-margin-bottom:30px;
-
-color:#111827;
-
-position:relative;
-z-index:1;
-}
-
-.about p{
-max-width:900px;
-
-margin:0 auto 28px;
-
-color:#555;
-
-font-size:18px;
-line-height:2;
-
-position:relative;
-z-index:1;
-}
-
-/* =========================
-   CONTACT SECTION
-========================= */
-
-.contact{
-padding:120px 10%;
-
-background:
-linear-gradient(
-135deg,
-#0f172a,
-#1e293b
-);
-
-text-align:center;
-
-position:relative;
-overflow:hidden;
-}
-
-.contact::before{
-content:"";
-
-position:absolute;
-
-width:500px;
-height:500px;
-
-background:
-rgba(139,92,246,0.2);
-
-filter:blur(120px);
-
-top:-120px;
-right:-120px;
-
-z-index:0;
-}
-
-.contact h2{
-font-size:48px;
-margin-bottom:25px;
-
-color:white;
-
-position:relative;
-z-index:1;
-}
-
-.contact p{
-max-width:800px;
-
-margin:0 auto 45px;
-
-line-height:2;
-font-size:18px;
-
-color:#cbd5e1;
-
-position:relative;
-z-index:1;
-}
-
-.contact-buttons{
-display:flex;
-justify-content:center;
-gap:22px;
-flex-wrap:wrap;
-
-position:relative;
-z-index:1;
-}
-
-.contact-btn{
-display:inline-flex;
-align-items:center;
-gap:12px;
-
-padding:16px 34px;
-
-border-radius:50px;
-
-text-decoration:none;
-font-weight:700;
-}
-
-/* whatsapp */
-
-.whatsapp{
-background:#25D366;
-color:white;
-
-box-shadow:
-0 12px 25px rgba(37,211,102,0.28);
-}
-
-/* email */
-
-.email{
-background:
-linear-gradient(135deg,#8b5cf6,#6366f1);
-
-color:white;
-
-box-shadow:
-0 12px 25px rgba(99,102,241,0.3);
-}
-
-.contact-btn:hover{
-transform:
-translateY(-6px)
-scale(1.03);
-}
-
-/* =========================
-   TIPS PAGE
-========================= */
-
-.tips-page{
-padding:100px 10%;
-background:#f4f7fb;
-}
-
-.tips-page h1{
-font-size:52px;
-margin-bottom:25px;
-text-align:center;
-color:#111827;
-}
-
-.intro{
-text-align:center;
-max-width:850px;
-margin:0 auto 60px;
-line-height:1.9;
-color:#555;
-font-size:18px;
-}
-
-/* =========================
-   TIP CARD
-========================= */
-
-.tip-card{
-background:white;
-padding:35px;
-border-radius:24px;
-margin-bottom:35px;
-
-box-shadow:
-0 10px 30px rgba(0,0,0,0.05);
-}
-
-.tip-card:hover{
-transform:translateY(-8px);
-
-box-shadow:
-0 18px 40px rgba(118,75,162,0.15);
-}
-
-/* =========================
-   CODE BOX
-========================= */
-
-.code-box{
-background:#0d1117;
-color:#58ffb1;
-
-padding:20px;
-
-border-radius:14px;
-
-overflow-x:auto;
-
-font-family:'Courier New', monospace;
-
-font-size:15px;
-line-height:1.8;
-
-white-space:pre-wrap;
-
-border-left:5px solid #764ba2;
-
-box-shadow:
-0 4px 15px rgba(0,0,0,0.15);
-
-margin-top:20px;
-}
-
-/* =========================
-   FLOATING WHATSAPP
-========================= */
-
-.floating-whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-
-width:65px;
-height:65px;
-
-background:#25D366;
-color:white;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:30px;
-
-text-decoration:none;
-
-box-shadow:
-0 10px 25px rgba(37,211,102,0.35);
-
-z-index:999;
-}
-
-.floating-whatsapp:hover{
-transform:scale(1.1);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-padding:70px 20px 40px;
-
-background:#020617;
-
-color:#cbd5e1;
-
-text-align:center;
-
-position:relative;
-overflow:hidden;
-}
-
-footer::before{
-content:"";
-
-position:absolute;
-
-top:0;
-left:50%;
-
-transform:translateX(-50%);
-
-width:80%;
-height:1px;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(139,92,246,0.6),
-transparent
-);
-}
-
-.footer-links{
-display:flex;
-justify-content:center;
-gap:30px;
-
-flex-wrap:wrap;
-
-margin-bottom:28px;
-}
-
-.footer-links a{
-color:#cbd5e1;
-
-text-decoration:none;
-
-font-weight:500;
-
-position:relative;
-}
-
-.footer-links a::after{
-content:"";
-
-position:absolute;
-
-left:0;
-bottom:-5px;
-
-width:0%;
-height:2px;
-
-background:#8b5cf6;
-
-transition:0.3s;
-}
-
-.footer-links a:hover{
-color:white;
-}
-
-.footer-links a:hover::after{
-width:100%;
-}
-
-footer p{
-color:#94a3b8;
-line-height:1.9;
-font-size:15px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:950px){
-
-.hero{
-padding-top:140px;
-}
-
-.hero-wrapper{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-content h1{
-font-size:42px;
-}
-
-.hero-content p{
-font-size:17px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.hero-image img{
-max-width:340px;
-margin-top:20px;
-}
-
-}
-
-/* MOBILE NAV */
-
-@media(max-width:900px){
-
-.menu-toggle{
-display:block;
-}
-
-nav{
-position:absolute;
-
-top:100%;
-left:0;
-
-width:100%;
-
-background:#0f172a;
-
-flex-direction:column;
-
-align-items:center;
-
-padding:25px 0;
-
-gap:22px;
-
-display:none;
-
-box-shadow:
-0 10px 30px rgba(0,0,0,0.15);
-}
-
-nav.active{
-display:flex;
-}
-
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.products,
-.about,
-.contact,
-.tips-page,
-.product-page{
-padding:80px 20px;
-}
-
-.products h2,
-.about h2,
-.contact h2,
-.tips-page h1{
-font-size:34px;
-}
-
-.hero-content h1{
-font-size:38px;
-}
-
-.hero-content p,
-.about p,
-.contact p{
-font-size:16px;
-line-height:1.9;
-}
-
-.product-card{
-padding:24px;
-}
-
-.product-container{
-flex-direction:column;
-text-align:center;
-padding:30px;
-}
-
-.product-image img{
-width:100%;
-max-width:320px;
-}
-
-.product-tags{
-justify-content:center;
-}
-
-.product-info{
-text-align:center;
-}
-
-.product-features li{
-justify-content:center;
-}
-
-header{
-padding:18px 20px;
-}
-
-.logo a{
-font-size:20px;
-}
-
-.contact-buttons{
-flex-direction:column;
-align-items:center;
-}
-
-.section-subtitle{
-font-size:16px;
-margin-bottom:45px;
-}
-
-}
+</html>
+```
