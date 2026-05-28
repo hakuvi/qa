@@ -5,184 +5,40 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>Hakuvi Interview Hub</title>
 
-<title>
-Hakuvi | SQL, ETL & Python Interview Hub
-</title>
+<link rel="stylesheet" href="css/style.css">
 
-<meta name="description"
-content="Daily SQL, ETL and Python interview questions, practical scenarios and beginner-friendly learning resources.">
-
-<link rel="stylesheet"
-href="css/style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- =========================
-HEADER
-========================= -->
-
-<header>
+<header class="topbar">
 
 <div class="logo">
-
-<a href="index.html">
-
-<img src="images/logo.jpg"
-alt="Hakuvi Logo">
-
-<span>
 Hakuvi
-</span>
-
-</a>
-
 </div>
 
-<nav>
-
-<a href="#daily-question">
-Daily Question
-</a>
-
-<a href="#latest-questions">
-Questions
-</a>
-
-<a href="#categories">
-Categories
-</a>
-
-<a href="#blogs">
-Blogs
-</a>
-
-<a href="#contact">
-Contact
-</a>
-
-</nav>
-
-</header>
-
-<!-- =========================
-HERO
-========================= -->
-
-<section class="hero">
-
-<div class="hero-wrapper">
-
-<div class="hero-content">
-
-<span class="featured-badge">
-
-🚀 Daily Interview Preparation Platform
-
-</span>
-
-<h1>
-
-Master SQL, ETL & Python Interviews
-
-</h1>
-
-<p>
-
-Daily interview questions,
-real-world scenarios,
-beginner-friendly explanations
-and practical QA learning resources.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#latest-questions"
-class="btn-primary">
-
-Explore Questions
-
-</a>
-
-<a href="#daily-question"
-class="btn-secondary">
-
-Today's Question
-
-</a>
-
-</div>
-
-<!-- SEARCH -->
-
-<div class="search-box">
+<div class="search-container">
 
 <input
 type="text"
 id="searchInput"
 placeholder="Search interview questions...">
 
-<i class="fa-solid fa-magnifying-glass"></i>
-
 </div>
 
-</div>
+</header>
 
-<div class="hero-image">
+<main class="layout">
 
-<img src="images/hero.png"
-alt="Interview Learning">
+<aside class="sidebar">
 
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-DAILY QUESTION
-========================= -->
-
-<section id="daily-question"
-class="products">
-
-<h2>
-
-🔥 Today's Interview Question
-
-</h2>
-
-<div id="featured-question">
-
-<div class="product-card featured-content">
-
-Loading today's question...
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-FILTERS
-========================= -->
-
-<section class="filters-section">
-
-<div class="filter-buttons">
+<h3>Categories</h3>
 
 <button class="filter-btn active"
 data-category="All">
@@ -212,333 +68,22 @@ Python
 
 </button>
 
+</aside>
+
+<section class="feed">
+
+<div id="featured-question">
+
 </div>
 
-</section>
-
-<!-- =========================
-LATEST QUESTIONS
-========================= -->
-
-<section id="latest-questions"
-class="products">
-
-<h2>
-
-Latest Interview Questions
-
-</h2>
-
-<p class="section-subtitle">
-
-Daily SQL, ETL and Python interview questions,
-real-world scenarios and beginner-friendly explanations.
-
-</p>
-
-<div class="product-grid"
+<div class="questions-feed"
 id="questions-container">
 
 </div>
 
 </section>
 
-<!-- =========================
-CATEGORIES
-========================= -->
-
-<section id="categories"
-class="products">
-
-<h2>
-
-Popular Categories
-
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-
-<div class="question-category">
-
-SQL
-
-</div>
-
-<h3>
-
-<i class="fa-solid fa-database"></i>
-
-SQL Questions
-
-</h3>
-
-<p>
-
-Learn SQL joins, window functions,
-queries and database interview scenarios.
-
-</p>
-
-</div>
-
-<div class="product-card">
-
-<div class="question-category">
-
-ETL
-
-</div>
-
-<h3>
-
-<i class="fa-solid fa-server"></i>
-
-ETL Scenarios
-
-</h3>
-
-<p>
-
-Understand ETL testing,
-incremental loading,
-validation and warehouse concepts.
-
-</p>
-
-</div>
-
-<div class="product-card">
-
-<div class="question-category">
-
-Python
-
-</div>
-
-<h3>
-
-<i class="fa-brands fa-python"></i>
-
-Python Basics
-
-</h3>
-
-<p>
-
-Practice Python interview questions,
-automation concepts
-and beginner-friendly coding examples.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-BLOGS
-========================= -->
-
-<section id="blogs"
-class="products">
-
-<h2>
-
-Recent Blogs
-
-</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-
-<div class="question-category">
-
-SQL
-
-</div>
-
-<h3>
-
-Top SQL Interview Questions
-
-</h3>
-
-<p>
-
-Important SQL interview questions
-every QA professional should know.
-
-</p>
-
-<a href="post.html?id=1"
-class="btn-secondary">
-
-Read More
-
-</a>
-
-</div>
-
-<div class="product-card">
-
-<div class="question-category">
-
-ETL
-
-</div>
-
-<h3>
-
-ETL Real-Time Scenarios
-
-</h3>
-
-<p>
-
-Learn ETL testing scenarios,
-data validation and warehouse concepts.
-
-</p>
-
-<a href="post.html?id=2"
-class="btn-secondary">
-
-Read More
-
-</a>
-
-</div>
-
-<div class="product-card">
-
-<div class="question-category">
-
-Python
-
-</div>
-
-<h3>
-
-Python for QA Engineers
-
-</h3>
-
-<p>
-
-Simple Python concepts
-for testers and automation engineers.
-
-</p>
-
-<a href="post.html?id=3"
-class="btn-secondary">
-
-Read More
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-CONTACT
-========================= -->
-
-<section id="contact"
-class="contact">
-
-<h2>
-
-Connect With Hakuvi
-
-</h2>
-
-<p>
-
-Stay updated with daily interview questions,
-learning resources and practical QA content.
-
-</p>
-
-<div class="contact-buttons">
-
-<a href="https://wa.me/918110031533"
-target="_blank"
-class="contact-btn whatsapp">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-WhatsApp
-
-</a>
-
-<a href="mailto:how2to1994@gmail.com"
-class="contact-btn email">
-
-<i class="fa-solid fa-envelope"></i>
-
-Email
-
-</a>
-
-</div>
-
-</section>
-
-<!-- =========================
-FOOTER
-========================= -->
-
-<footer>
-
-<div class="footer-links">
-
-<a href="#">
-SQL
-</a>
-
-<a href="#">
-ETL
-</a>
-
-<a href="#">
-Python
-</a>
-
-<a href="#">
-Blogs
-</a>
-
-<a href="#">
-Contact
-</a>
-
-</div>
-
-<p>
-
-Built for Daily Learning 🚀
-
-</p>
-
-<br>
-
-<p>
-
-© 2026 Hakuvi.
-All rights reserved.
-
-</p>
-
-</footer>
+</main>
 
 <script src="js/script.js"></script>
 
