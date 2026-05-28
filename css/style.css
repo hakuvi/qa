@@ -1,405 +1,811 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
+```css id="jkj3db"
+/* =========================================================
+   HAKUVI - MODERN INTERVIEW PLATFORM CSS
+========================================================= */
 
-<head>
+/* =========================
+   GLOBAL
+========================= */
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+html{
+scroll-behavior:smooth;
+}
 
-<title>
-Hakuvi | SQL, ETL & Python Interview Hub
-</title>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-<meta name="description"
-content="Daily SQL, ETL and Python interview questions, practical scenarios and beginner-friendly learning resources.">
+body{
+background:#f8fafc;
+color:#111827;
+line-height:1.7;
+overflow-x:hidden;
+}
 
-<link rel="stylesheet" href="css/style.css">
+/* =========================
+   SCROLLBAR
+========================= */
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
+::-webkit-scrollbar{
+width:10px;
+}
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+::-webkit-scrollbar-track{
+background:#e2e8f0;
+}
 
-</head>
+::-webkit-scrollbar-thumb{
+background:linear-gradient(
+180deg,
+#8b5cf6,
+#06b6d4
+);
 
-<body>
+border-radius:20px;
+}
 
-<!-- =========================
-HEADER
-========================= -->
+/* =========================
+   LINKS
+========================= */
 
-<header>
+a{
+text-decoration:none;
+transition:0.3s;
+}
 
-<div class="logo">
+/* =========================
+   HEADER
+========================= */
 
-<a href="index.html">
+header{
 
-<img src="images/logo.jpg" alt="Hakuvi Logo">
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-<span>Hakuvi</span>
+padding:20px 10%;
 
-</a>
+background:rgba(15,23,42,0.9);
 
-</div>
+backdrop-filter:blur(15px);
 
-<nav>
+position:sticky;
+top:0;
 
-<a href="#daily-question">Daily Question</a>
+z-index:1000;
 
-<a href="#latest-questions">Latest Questions</a>
+border-bottom:
+1px solid rgba(255,255,255,0.08);
 
-<a href="#categories">Categories</a>
+}
 
-<a href="#blogs">Blogs</a>
+/* =========================
+   LOGO
+========================= */
 
-<a href="#contact">Contact</a>
+.logo a{
 
-</nav>
+display:flex;
+align-items:center;
 
-</header>
+color:white;
 
-<!-- =========================
-HERO SECTION
-========================= -->
+font-size:24px;
+font-weight:700;
 
-<section class="hero">
+}
 
-<div class="hero-wrapper">
+.logo img{
 
-<div class="hero-content">
+width:45px;
+height:45px;
 
-<span class="featured-badge">
-🚀 Daily Interview Preparation Platform
-</span>
+border-radius:50%;
 
-<h1>
-Master SQL, ETL & Python Interviews
-</h1>
+margin-right:12px;
 
-<p>
-Daily interview questions, practical scenarios,
-beginner-friendly explanations and real-world learning
-resources for QA and data professionals.
-</p>
+object-fit:cover;
 
-<div class="hero-buttons">
+}
 
-<a href="#latest-questions"
-class="btn-primary">
+/* =========================
+   NAVBAR
+========================= */
 
-Explore Questions
+nav{
 
-</a>
+display:flex;
+align-items:center;
+gap:28px;
 
-<a href="#daily-question"
-class="btn-secondary">
+}
 
-Daily Question
+nav a{
 
-</a>
+color:#e2e8f0;
+font-weight:500;
+position:relative;
 
-</div>
+}
 
-</div>
+nav a::after{
 
-<div class="hero-image">
+content:"";
 
-<img src="images/hero.png"
-alt="Interview Learning">
+position:absolute;
 
-</div>
+left:0;
+bottom:-5px;
 
-</div>
+width:0%;
+height:2px;
 
-</section>
+background:#8b5cf6;
 
-<!-- =========================
-DAILY QUESTION
-========================= -->
+transition:0.3s;
 
-<section id="daily-question"
-class="products">
+}
 
-<h2>
-🔥 Today's Interview Question
-</h2>
+nav a:hover{
+color:white;
+}
 
-<div class="product-grid">
+nav a:hover::after{
+width:100%;
+}
 
-<div class="product-card featured-content">
+/* =========================
+   HERO
+========================= */
 
-<div class="question-category">
-SQL
-</div>
+.hero{
 
-<h3>
-What is the difference between DELETE,
-TRUNCATE and DROP?
-</h3>
+min-height:100vh;
 
-<p>
-One of the most important SQL interview questions
-explained with examples and practical scenarios.
-</p>
+display:flex;
+align-items:center;
+justify-content:center;
 
-<a href="#"
-class="btn-primary">
+padding:120px 10% 80px;
 
-Read Full Explanation
+background:
+radial-gradient(circle at top left,#8b5cf6 0%,transparent 35%),
+radial-gradient(circle at bottom right,#06b6d4 0%,transparent 30%),
+linear-gradient(135deg,#0f172a,#1e293b);
 
-</a>
+overflow:hidden;
+position:relative;
 
-</div>
+}
 
-</div>
+.hero::before{
 
-</section>
+content:"";
 
-<!-- =========================
-LATEST QUESTIONS
-========================= -->
+position:absolute;
 
-<section id="latest-questions"
-class="products">
+width:500px;
+height:500px;
 
-<h2>
-Latest Interview Questions
-</h2>
+background:rgba(255,255,255,0.05);
 
-<p class="section-subtitle">
+border-radius:50%;
 
-Daily SQL, ETL and Python interview questions,
-real-world scenarios and beginner-friendly explanations.
+top:-120px;
+left:-120px;
 
-</p>
+animation:floatBlob 8s ease-in-out infinite;
 
-<div class="product-grid"
-id="questions-container">
+}
 
-</div>
+@keyframes floatBlob{
 
-</section>
+0%{
+transform:translateY(0px);
+}
 
-<!-- =========================
-CATEGORIES
-========================= -->
+50%{
+transform:translateY(25px);
+}
 
-<section id="categories"
-class="products">
+100%{
+transform:translateY(0px);
+}
 
-<h2>
-Popular Categories
-</h2>
+}
 
-<div class="product-grid">
+.hero-wrapper{
 
-<div class="product-card">
+display:flex;
+align-items:center;
+justify-content:space-between;
 
-<h3>
-<i class="fa-solid fa-database"></i>
+gap:60px;
 
-SQL Questions
+width:100%;
 
-</h3>
+position:relative;
+z-index:2;
 
-<p>
-Learn SQL interview concepts, joins, window functions,
-queries and practical database scenarios.
-</p>
+}
 
-</div>
+/* =========================
+   HERO CONTENT
+========================= */
 
-<div class="product-card">
+.hero-content{
+flex:1;
+}
 
-<h3>
-<i class="fa-solid fa-server"></i>
+.featured-badge{
 
-ETL Scenarios
+display:inline-block;
 
-</h3>
+padding:10px 22px;
 
-<p>
-Understand ETL testing concepts, validation,
-incremental loading and real-world scenarios.
-</p>
+background:rgba(255,255,255,0.12);
 
-</div>
+border:1px solid rgba(255,255,255,0.15);
 
-<div class="product-card">
+border-radius:50px;
 
-<h3>
-<i class="fa-brands fa-python"></i>
+backdrop-filter:blur(10px);
 
-Python Basics
+color:white;
 
-</h3>
+font-size:14px;
+font-weight:600;
 
-<p>
-Practice Python interview questions,
-coding basics and automation concepts.
-</p>
+margin-bottom:28px;
 
-</div>
+}
 
-</div>
+.hero-content h1{
 
-</section>
+font-size:60px;
+line-height:1.15;
 
-<!-- =========================
-RECENT BLOGS
-========================= -->
+margin-bottom:25px;
 
-<section id="blogs"
-class="products">
+color:white;
 
-<h2>
-Recent Blogs
-</h2>
+}
 
-<div class="product-grid">
+.hero-content p{
 
-<div class="product-card">
+font-size:18px;
+line-height:1.9;
 
-<h3>
-Top 10 SQL Interview Questions
-</h3>
+max-width:650px;
 
-<p>
-Important SQL interview questions every QA
-professional should prepare before interviews.
-</p>
+margin-bottom:35px;
 
-<a href="#"
-class="btn-secondary">
+color:#dbe4f0;
 
-Read Blog
+}
 
-</a>
+/* =========================
+   HERO BUTTONS
+========================= */
 
-</div>
+.hero-buttons{
 
-<div class="product-card">
+display:flex;
+gap:20px;
+flex-wrap:wrap;
 
-<h3>
-ETL Testing Real-Time Scenarios
-</h3>
+}
 
-<p>
-Learn practical ETL testing interview
-scenarios with beginner-friendly explanations.
-</p>
+.btn-primary,
+.btn-secondary{
 
-<a href="#"
-class="btn-secondary">
+display:inline-block;
 
-Read Blog
+padding:15px 32px;
 
-</a>
+border-radius:50px;
 
-</div>
+font-weight:600;
 
-<div class="product-card">
+transition:0.3s;
 
-<h3>
-Python for QA Beginners
-</h3>
+}
 
-<p>
-Simple Python concepts and coding examples
-useful for testers and automation engineers.
-</p>
+.btn-primary{
 
-<a href="#"
-class="btn-secondary">
+background:
+linear-gradient(135deg,#8b5cf6,#6366f1);
 
-Read Blog
+color:white;
 
-</a>
+box-shadow:
+0 12px 30px rgba(99,102,241,0.3);
 
-</div>
+}
 
-</div>
+.btn-primary:hover{
 
-</section>
+transform:translateY(-5px);
 
-<!-- =========================
-CONTACT
-========================= -->
+box-shadow:
+0 18px 40px rgba(99,102,241,0.4);
 
-<section id="contact"
-class="contact">
+}
 
-<h2>
-Connect With Hakuvi
-</h2>
+.btn-secondary{
 
-<p>
-Stay updated with daily interview questions,
-learning resources and practical QA content.
-</p>
+background:white;
+color:#111827;
 
-<div class="contact-buttons">
+}
 
-<a href="https://wa.me/918110031533"
-target="_blank"
-class="contact-btn whatsapp">
+.btn-secondary:hover{
 
-<i class="fa-brands fa-whatsapp"></i>
+transform:translateY(-5px);
 
-WhatsApp
+}
 
-</a>
+/* =========================
+   HERO IMAGE
+========================= */
 
-<a href="mailto:how2to1994@gmail.com"
-class="contact-btn email">
+.hero-image{
 
-<i class="fa-solid fa-envelope"></i>
+flex:1;
+display:flex;
+justify-content:center;
 
-Email
+}
 
-</a>
+.hero-image img{
 
-</div>
+width:min(100%,520px);
 
-</section>
+animation:floating 4s ease-in-out infinite;
 
-<!-- =========================
-FOOTER
-========================= -->
+}
 
-<footer>
+@keyframes floating{
 
-<div class="footer-links">
+0%{
+transform:translateY(0px);
+}
 
-<a href="#">SQL</a>
+50%{
+transform:translateY(-15px);
+}
 
-<a href="#">ETL</a>
+100%{
+transform:translateY(0px);
+}
 
-<a href="#">Python</a>
+}
 
-<a href="#">Blogs</a>
+/* =========================
+   SECTION
+========================= */
 
-<a href="#">Contact</a>
+.products{
 
-</div>
+padding:100px 10%;
 
-<p>
-Built for Daily Learning 🚀
-</p>
+text-align:center;
 
-<br>
+background:#f8fafc;
 
-<p>
-© 2026 Hakuvi. All rights reserved.
-</p>
+}
 
-</footer>
+.products h2{
 
-<script src="js/script.js"></script>
+font-size:42px;
 
-</body>
+margin-bottom:20px;
 
-</html>
+color:#111827;
+
+}
+
+.section-subtitle{
+
+max-width:700px;
+
+margin:0 auto 50px;
+
+line-height:1.9;
+
+color:#64748b;
+
+font-size:17px;
+
+}
+
+/* =========================
+   GRID
+========================= */
+
+.product-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:35px;
+
+}
+
+/* =========================
+   CARD
+========================= */
+
+.product-card{
+
+background:white;
+
+padding:32px;
+
+border-radius:24px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,0.05);
+
+transition:0.4s;
+
+position:relative;
+
+overflow:hidden;
+
+display:flex;
+flex-direction:column;
+
+text-align:left;
+
+}
+
+.product-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.35),
+transparent
+);
+
+transition:0.8s;
+
+}
+
+.product-card:hover::before{
+left:100%;
+}
+
+.product-card:hover{
+
+transform:
+translateY(-10px)
+scale(1.01);
+
+box-shadow:
+0 20px 40px rgba(139,92,246,0.15);
+
+}
+
+/* =========================
+   QUESTION CATEGORY
+========================= */
+
+.question-category{
+
+display:inline-block;
+
+padding:8px 16px;
+
+background:#ede9fe;
+
+color:#7c3aed;
+
+font-size:13px;
+font-weight:700;
+
+border-radius:30px;
+
+margin-bottom:18px;
+
+width:fit-content;
+
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.product-card h3{
+
+font-size:24px;
+
+margin-bottom:16px;
+
+line-height:1.4;
+
+color:#111827;
+
+}
+
+.product-card p{
+
+color:#64748b;
+
+line-height:1.9;
+
+margin-bottom:25px;
+
+font-size:15px;
+
+}
+
+/* =========================
+   CARD FOOTER
+========================= */
+
+.question-footer{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-top:auto;
+
+padding-top:20px;
+
+}
+
+.question-date{
+
+font-size:14px;
+font-weight:500;
+
+color:#94a3b8;
+
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+
+padding:120px 10%;
+
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#1e293b
+);
+
+text-align:center;
+
+}
+
+.contact h2{
+
+font-size:48px;
+
+margin-bottom:25px;
+
+color:white;
+
+}
+
+.contact p{
+
+max-width:800px;
+
+margin:0 auto 45px;
+
+line-height:2;
+
+font-size:18px;
+
+color:#cbd5e1;
+
+}
+
+.contact-buttons{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+.contact-btn{
+
+display:inline-flex;
+align-items:center;
+gap:10px;
+
+padding:16px 32px;
+
+border-radius:50px;
+
+font-weight:700;
+
+color:white;
+
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.email{
+background:#8b5cf6;
+}
+
+.contact-btn:hover{
+
+transform:
+translateY(-5px)
+scale(1.03);
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+padding:70px 20px 40px;
+
+background:#020617;
+
+color:#cbd5e1;
+
+text-align:center;
+
+}
+
+.footer-links{
+
+display:flex;
+justify-content:center;
+gap:25px;
+
+flex-wrap:wrap;
+
+margin-bottom:30px;
+
+}
+
+.footer-links a{
+
+color:#cbd5e1;
+
+font-weight:500;
+
+}
+
+.footer-links a:hover{
+color:white;
+}
+
+footer p{
+
+color:#94a3b8;
+
+line-height:1.9;
+
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.error-message{
+
+background:#fee2e2;
+
+color:#dc2626;
+
+padding:20px;
+
+border-radius:14px;
+
+font-weight:600;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+.hero-wrapper{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-content h1{
+font-size:42px;
+}
+
+.hero-content p{
+margin:auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-image img{
+max-width:340px;
+}
+
+}
+
+@media(max-width:768px){
+
+header{
+padding:18px 20px;
+flex-direction:column;
+gap:18px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+gap:18px;
+}
+
+.products,
+.contact{
+padding:80px 20px;
+}
+
+.hero{
+padding:140px 20px 80px;
+}
+
+.hero-content h1{
+font-size:38px;
+}
+
+.products h2,
+.contact h2{
+font-size:34px;
+}
+
+.hero-content p,
+.contact p{
+font-size:16px;
+}
+
+.product-card{
+padding:24px;
+}
+
+.question-footer{
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+}
+
+}
 ```
