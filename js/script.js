@@ -1,6 +1,6 @@
 
 
-```javascript id="8ew94d"
+
 async function loadQuestions() {
 
     const container =
