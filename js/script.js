@@ -1,4 +1,6 @@
 
+
+```javascript id="8ew94d"
 async function loadQuestions() {
 
     const container =
@@ -56,7 +58,7 @@ async function loadQuestions() {
 
                     </span>
 
-                    <a href="${question.page}"
+                    <a href="post.html?id=${question.id}"
                     class="btn-secondary">
 
                         Read More
@@ -94,3 +96,4 @@ document.addEventListener(
     }
 );
 ```
+
