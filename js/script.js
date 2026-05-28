@@ -1,32 +1,69 @@
-async function loadProducts() {
+```javascript id="95fx3i"
+async function loadQuestions() {
 
-    const container = document.getElementById("product-list");
+    const container =
+    document.getElementById("questions-container");
 
     try {
 
-        const response = await fetch("product.json");
+        const response =
+        await fetch("questions.json");
 
         if (!response.ok) {
-            throw new Error("Unable to load products");
+
+            throw new Error(
+                "Unable to load questions"
+            );
         }
 
-        const products = await response.json();
+        const questions =
+        await response.json();
 
         container.innerHTML = "";
 
-        products.forEach(product => {
+        questions.forEach(question => {
 
-            const card = document.createElement("div");
+            const card =
+            document.createElement("div");
 
             card.className = "product-card";
 
             card.innerHTML = `
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-                <p class="price">₹${product.price}</p>
-                <a href="product.html?id=${product.id}" class="btn-secondary">
-                    View Details
-                </a>
+
+                <div class="question-category">
+
+                    ${question.category}
+
+                </div>
+
+                <h3>
+
+                    ${question.title}
+
+                </h3>
+
+                <p>
+
+                    ${question.description}
+
+                </p>
+
+                <div class="question-footer">
+
+                    <span class="question-date">
+
+                        ${question.date}
+
+                    </span>
+
+                    <a href="${question.page}"
+                    class="btn-secondary">
+
+                        Read More
+
+                    </a>
+
+                </div>
             `;
 
             container.appendChild(card);
@@ -35,16 +72,25 @@ async function loadProducts() {
 
     } catch (error) {
 
-        console.error("Error loading products:", error);
+        console.error(error);
 
         container.innerHTML = `
+
             <div class="error-message">
-                Failed to load products.
+
+                Failed to load questions.
+
             </div>
         `;
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadProducts();
-});
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        loadQuestions();
+
+    }
+);
+```
