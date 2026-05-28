@@ -1,4 +1,4 @@
-```javascript
+
 let allQuestions = [];
 
 async function loadQuestions() {
