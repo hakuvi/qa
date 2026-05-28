@@ -5,7 +5,9 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>
 Hakuvi | SQL, ETL & Python Interview Hub
@@ -14,7 +16,8 @@ Hakuvi | SQL, ETL & Python Interview Hub
 <meta name="description"
 content="Daily SQL, ETL and Python interview questions, practical scenarios and beginner-friendly learning resources.">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+href="css/style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet">
@@ -36,9 +39,12 @@ HEADER
 
 <a href="index.html">
 
-<img src="images/logo.jpg" alt="Hakuvi Logo">
+<img src="images/logo.jpg"
+alt="Hakuvi Logo">
 
-<span>Hakuvi</span>
+<span>
+Hakuvi
+</span>
 
 </a>
 
@@ -46,22 +52,32 @@ HEADER
 
 <nav>
 
-<a href="#daily-question">Daily Question</a>
+<a href="#daily-question">
+Daily Question
+</a>
 
-<a href="#latest-questions">Latest Questions</a>
+<a href="#latest-questions">
+Questions
+</a>
 
-<a href="#categories">Categories</a>
+<a href="#categories">
+Categories
+</a>
 
-<a href="#blogs">Blogs</a>
+<a href="#blogs">
+Blogs
+</a>
 
-<a href="#contact">Contact</a>
+<a href="#contact">
+Contact
+</a>
 
 </nav>
 
 </header>
 
 <!-- =========================
-HERO SECTION
+HERO
 ========================= -->
 
 <section class="hero">
@@ -71,17 +87,24 @@ HERO SECTION
 <div class="hero-content">
 
 <span class="featured-badge">
+
 🚀 Daily Interview Preparation Platform
+
 </span>
 
 <h1>
+
 Master SQL, ETL & Python Interviews
+
 </h1>
 
 <p>
-Daily interview questions, practical scenarios,
-beginner-friendly explanations and real-world learning
-resources for QA and data professionals.
+
+Daily interview questions,
+real-world scenarios,
+beginner-friendly explanations
+and practical QA learning resources.
+
 </p>
 
 <div class="hero-buttons">
@@ -96,9 +119,22 @@ Explore Questions
 <a href="#daily-question"
 class="btn-secondary">
 
-Daily Question
+Today's Question
 
 </a>
+
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search interview questions...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
 
 </div>
 
@@ -123,35 +159,58 @@ DAILY QUESTION
 class="products">
 
 <h2>
+
 🔥 Today's Interview Question
+
 </h2>
 
-<div class="product-grid">
+<div id="featured-question">
 
 <div class="product-card featured-content">
 
-<div class="question-category">
+Loading today's question...
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+FILTERS
+========================= -->
+
+<section class="filters-section">
+
+<div class="filter-buttons">
+
+<button class="filter-btn active"
+data-category="All">
+
+All
+
+</button>
+
+<button class="filter-btn"
+data-category="SQL">
+
 SQL
-</div>
 
-<h3>
-What is the difference between DELETE,
-TRUNCATE and DROP?
-</h3>
+</button>
 
-<p>
-One of the most important SQL interview questions
-explained with examples and practical scenarios.
-</p>
+<button class="filter-btn"
+data-category="ETL">
 
-<a href="#"
-class="btn-primary">
+ETL
 
-Read Full Explanation
+</button>
 
-</a>
+<button class="filter-btn"
+data-category="Python">
 
-</div>
+Python
+
+</button>
 
 </div>
 
@@ -165,7 +224,9 @@ LATEST QUESTIONS
 class="products">
 
 <h2>
+
 Latest Interview Questions
+
 </h2>
 
 <p class="section-subtitle">
@@ -190,14 +251,23 @@ CATEGORIES
 class="products">
 
 <h2>
+
 Popular Categories
+
 </h2>
 
 <div class="product-grid">
 
 <div class="product-card">
 
+<div class="question-category">
+
+SQL
+
+</div>
+
 <h3>
+
 <i class="fa-solid fa-database"></i>
 
 SQL Questions
@@ -205,15 +275,24 @@ SQL Questions
 </h3>
 
 <p>
-Learn SQL interview concepts, joins, window functions,
-queries and practical database scenarios.
+
+Learn SQL joins, window functions,
+queries and database interview scenarios.
+
 </p>
 
 </div>
 
 <div class="product-card">
 
+<div class="question-category">
+
+ETL
+
+</div>
+
 <h3>
+
 <i class="fa-solid fa-server"></i>
 
 ETL Scenarios
@@ -221,15 +300,25 @@ ETL Scenarios
 </h3>
 
 <p>
-Understand ETL testing concepts, validation,
-incremental loading and real-world scenarios.
+
+Understand ETL testing,
+incremental loading,
+validation and warehouse concepts.
+
 </p>
 
 </div>
 
 <div class="product-card">
 
+<div class="question-category">
+
+Python
+
+</div>
+
 <h3>
+
 <i class="fa-brands fa-python"></i>
 
 Python Basics
@@ -237,8 +326,11 @@ Python Basics
 </h3>
 
 <p>
+
 Practice Python interview questions,
-coding basics and automation concepts.
+automation concepts
+and beginner-friendly coding examples.
+
 </p>
 
 </div>
@@ -248,33 +340,45 @@ coding basics and automation concepts.
 </section>
 
 <!-- =========================
-RECENT BLOGS
+BLOGS
 ========================= -->
 
 <section id="blogs"
 class="products">
 
 <h2>
+
 Recent Blogs
+
 </h2>
 
 <div class="product-grid">
 
 <div class="product-card">
 
+<div class="question-category">
+
+SQL
+
+</div>
+
 <h3>
-Top 10 SQL Interview Questions
+
+Top SQL Interview Questions
+
 </h3>
 
 <p>
-Important SQL interview questions every QA
-professional should prepare before interviews.
+
+Important SQL interview questions
+every QA professional should know.
+
 </p>
 
-<a href="#"
+<a href="post.html?id=1"
 class="btn-secondary">
 
-Read Blog
+Read More
 
 </a>
 
@@ -282,19 +386,29 @@ Read Blog
 
 <div class="product-card">
 
+<div class="question-category">
+
+ETL
+
+</div>
+
 <h3>
-ETL Testing Real-Time Scenarios
+
+ETL Real-Time Scenarios
+
 </h3>
 
 <p>
-Learn practical ETL testing interview
-scenarios with beginner-friendly explanations.
+
+Learn ETL testing scenarios,
+data validation and warehouse concepts.
+
 </p>
 
-<a href="#"
+<a href="post.html?id=2"
 class="btn-secondary">
 
-Read Blog
+Read More
 
 </a>
 
@@ -302,19 +416,29 @@ Read Blog
 
 <div class="product-card">
 
+<div class="question-category">
+
+Python
+
+</div>
+
 <h3>
-Python for QA Beginners
+
+Python for QA Engineers
+
 </h3>
 
 <p>
-Simple Python concepts and coding examples
-useful for testers and automation engineers.
+
+Simple Python concepts
+for testers and automation engineers.
+
 </p>
 
-<a href="#"
+<a href="post.html?id=3"
 class="btn-secondary">
 
-Read Blog
+Read More
 
 </a>
 
@@ -332,12 +456,16 @@ CONTACT
 class="contact">
 
 <h2>
+
 Connect With Hakuvi
+
 </h2>
 
 <p>
+
 Stay updated with daily interview questions,
 learning resources and practical QA content.
+
 </p>
 
 <div class="contact-buttons">
@@ -373,26 +501,41 @@ FOOTER
 
 <div class="footer-links">
 
-<a href="#">SQL</a>
+<a href="#">
+SQL
+</a>
 
-<a href="#">ETL</a>
+<a href="#">
+ETL
+</a>
 
-<a href="#">Python</a>
+<a href="#">
+Python
+</a>
 
-<a href="#">Blogs</a>
+<a href="#">
+Blogs
+</a>
 
-<a href="#">Contact</a>
+<a href="#">
+Contact
+</a>
 
 </div>
 
 <p>
+
 Built for Daily Learning 🚀
+
 </p>
 
 <br>
 
 <p>
-© 2026 Hakuvi. All rights reserved.
+
+© 2026 Hakuvi.
+All rights reserved.
+
 </p>
 
 </footer>
