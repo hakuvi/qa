@@ -1,99 +1,192 @@
-
-
+```javascript
+let allQuestions = [];
 
 async function loadQuestions() {
 
+    const response =
+    await fetch("questions.json");
+
+    const questions =
+    await response.json();
+
+    allQuestions = questions;
+
+    loadFeaturedQuestion(questions);
+
+    renderQuestions(questions);
+
+    setupSearch();
+
+    setupFilters();
+}
+
+function loadFeaturedQuestion(questions){
+
+    const featured =
+    questions[0];
+
+    document.getElementById(
+    "featured-question"
+    ).innerHTML = `
+
+    <div class="featured-card">
+
+        <span class="badge">
+
+            ${featured.category}
+
+        </span>
+
+        <h2>
+
+            ${featured.title}
+
+        </h2>
+
+        <p>
+
+            ${featured.description}
+
+        </p>
+
+        <a href="post.html?id=${featured.id}"
+        class="read-btn">
+
+            Read More →
+
+        </a>
+
+    </div>
+    `;
+}
+
+function renderQuestions(questions){
+
     const container =
-    document.getElementById("questions-container");
+    document.getElementById(
+    "questions-container"
+    );
 
-    try {
+    container.innerHTML = "";
 
-        const response =
-        await fetch("questions.json");
+    questions.forEach(question => {
 
-        if (!response.ok) {
+        container.innerHTML += `
 
-            throw new Error(
-                "Unable to load questions"
-            );
-        }
+        <div class="question-card">
 
-        const questions =
-        await response.json();
+            <div class="card-top">
 
-        container.innerHTML = "";
-
-        questions.forEach(question => {
-
-            const card =
-            document.createElement("div");
-
-            card.className = "product-card";
-
-            card.innerHTML = `
-
-                <div class="question-category">
+                <span class="badge">
 
                     ${question.category}
 
-                </div>
+                </span>
 
-                <h3>
+                <span class="date">
 
-                    ${question.title}
+                    ${question.date}
 
-                </h3>
-
-                <p>
-
-                    ${question.description}
-
-                </p>
-
-                <div class="question-footer">
-
-                    <span class="question-date">
-
-                        ${question.date}
-
-                    </span>
-
-                    <a href="post.html?id=${question.id}"
-                    class="btn-secondary">
-
-                        Read More
-
-                    </a>
-
-                </div>
-            `;
-
-            container.appendChild(card);
-
-        });
-
-    } catch (error) {
-
-        console.error(error);
-
-        container.innerHTML = `
-
-            <div class="error-message">
-
-                Failed to load questions.
+                </span>
 
             </div>
+
+            <h3>
+
+                ${question.title}
+
+            </h3>
+
+            <p>
+
+                ${question.description}
+
+            </p>
+
+            <a href="post.html?id=${question.id}"
+            class="read-btn">
+
+                Read More →
+
+            </a>
+
+        </div>
         `;
-    }
+    });
 }
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+function setupSearch(){
 
-        loadQuestions();
+    const search =
+    document.getElementById(
+    "searchInput"
+    );
 
-    }
-);
+    search.addEventListener(
+    "input",
+    e => {
+
+        const value =
+        e.target.value.toLowerCase();
+
+        const filtered =
+        allQuestions.filter(q =>
+
+            q.title.toLowerCase()
+            .includes(value)
+
+            ||
+
+            q.description.toLowerCase()
+            .includes(value)
+
+        );
+
+        renderQuestions(filtered);
+
+    });
+}
+
+function setupFilters(){
+
+    const buttons =
+    document.querySelectorAll(
+    ".filter-btn"
+    );
+
+    buttons.forEach(btn => {
+
+        btn.addEventListener(
+        "click",
+        () => {
+
+            document
+            .querySelector(".active")
+            ?.classList.remove("active");
+
+            btn.classList.add("active");
+
+            const category =
+            btn.dataset.category;
+
+            if(category === "All"){
+
+                renderQuestions(allQuestions);
+
+                return;
+            }
+
+            const filtered =
+            allQuestions.filter(q =>
+
+                q.category === category
+            );
+
+            renderQuestions(filtered);
+
+        });
+    });
+}
+
+loadQuestions();
 ```
-
