@@ -1,0 +1,57 @@
+```json
+[
+  {
+    "id": 1,
+    "category": "SQL",
+    "title": "What is the difference between WHERE and HAVING?",
+    "description": "Learn how SQL filtering works with practical examples and interview scenarios.",
+    "date": "May 2026",
+    "page": "posts/sql-where-vs-having.html"
+  },
+
+  {
+    "id": 2,
+    "category": "ETL",
+    "title": "What is Incremental Loading in ETL?",
+    "description": "Understand incremental load concepts and real-world ETL testing scenarios.",
+    "date": "May 2026",
+    "page": "posts/etl-incremental-loading.html"
+  },
+
+  {
+    "id": 3,
+    "category": "Python",
+    "title": "What is List Comprehension in Python?",
+    "description": "Python interview basics explained simply with beginner-friendly examples.",
+    "date": "May 2026",
+    "page": "posts/python-list-comprehension.html"
+  },
+
+  {
+    "id": 4,
+    "category": "SQL",
+    "title": "Explain Different Types of SQL JOINs",
+    "description": "Master INNER JOIN, LEFT JOIN, RIGHT JOIN and FULL JOIN concepts.",
+    "date": "May 2026",
+    "page": "posts/sql-joins.html"
+  },
+
+  {
+    "id": 5,
+    "category": "ETL",
+    "title": "What is SCD Type 1 and Type 2?",
+    "description": "Frequently asked ETL interview concept explained step by step.",
+    "date": "May 2026",
+    "page": "posts/scd-types.html"
+  },
+
+  {
+    "id": 6,
+    "category": "Python",
+    "title": "What are Python Decorators?",
+    "description": "Understand decorators with simple interview-focused explanations.",
+    "date": "May 2026",
+    "page": "posts/python-decorators.html"
+  }
+]
+```
