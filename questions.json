@@ -1,57 +1,404 @@
-
+```json id="ux8lqp"
 [
   {
     "id": 1,
-    "category": "SQL",
-    "title": "What is the difference between WHERE and HAVING?",
-    "description": "Learn how SQL filtering works with practical examples and interview scenarios.",
-    "date": "May 2026",
-    "page": "posts/sql-where-vs-having.html"
+    "category": "ETL",
+    "title": "What is ETL?",
+    "description": "Learn the basics of Extract, Transform and Load process used in data warehousing.",
+    "content": "ETL stands for Extract, Transform and Load. It is used to move data from source systems into a data warehouse. Data is extracted from different systems, transformed based on business rules and finally loaded into the target system.",
+    "date": "May 2026"
   },
-
   {
     "id": 2,
     "category": "ETL",
-    "title": "What is Incremental Loading in ETL?",
-    "description": "Understand incremental load concepts and real-world ETL testing scenarios.",
-    "date": "May 2026",
-    "page": "posts/etl-incremental-loading.html"
+    "title": "What is ETL Testing?",
+    "description": "Understand ETL testing concepts and data validation techniques.",
+    "content": "ETL testing validates that data is correctly extracted, transformed and loaded into the target system. It ensures data accuracy, integrity and completeness throughout the ETL process.",
+    "date": "May 2026"
   },
-
   {
     "id": 3,
-    "category": "Python",
-    "title": "What is List Comprehension in Python?",
-    "description": "Python interview basics explained simply with beginner-friendly examples.",
-    "date": "May 2026",
-    "page": "posts/python-list-comprehension.html"
+    "category": "ETL",
+    "title": "What are the Main Phases of ETL?",
+    "description": "Learn about Extract, Transform and Load phases with examples.",
+    "content": "The three main phases of ETL are Extract, Transform and Load. Data is extracted from sources, transformed using business logic and loaded into the target warehouse.",
+    "date": "May 2026"
   },
-
   {
     "id": 4,
-    "category": "SQL",
-    "title": "Explain Different Types of SQL JOINs",
-    "description": "Master INNER JOIN, LEFT JOIN, RIGHT JOIN and FULL JOIN concepts.",
-    "date": "May 2026",
-    "page": "posts/sql-joins.html"
+    "category": "ETL",
+    "title": "What is a Staging Area?",
+    "description": "Understand staging area concepts in ETL architecture.",
+    "content": "A staging area is a temporary storage location where extracted data is stored before transformation and loading. It helps clean and validate data efficiently.",
+    "date": "May 2026"
   },
-
   {
     "id": 5,
     "category": "ETL",
-    "title": "What is SCD Type 1 and Type 2?",
-    "description": "Frequently asked ETL interview concept explained step by step.",
-    "date": "May 2026",
-    "page": "posts/scd-types.html"
+    "title": "What is Data Transformation?",
+    "description": "Learn how raw data is transformed into usable format.",
+    "content": "Data transformation converts raw source data into meaningful and standardized data. It includes filtering, aggregation, calculations and format conversions.",
+    "date": "May 2026"
   },
-
   {
     "id": 6,
-    "category": "Python",
-    "title": "What are Python Decorators?",
-    "description": "Understand decorators with simple interview-focused explanations.",
-    "date": "May 2026",
-    "page": "posts/python-decorators.html"
+    "category": "ETL",
+    "title": "What is Data Cleansing?",
+    "description": "Understand duplicate removal and data quality improvement.",
+    "content": "Data cleansing improves data quality by removing duplicates, correcting invalid values and handling null or inconsistent data.",
+    "date": "May 2026"
+  },
+  {
+    "id": 7,
+    "category": "ETL",
+    "title": "What is a Fact Table?",
+    "description": "Learn how measurable business data is stored in warehouses.",
+    "content": "A fact table stores measurable business data such as sales, revenue and transactions. It usually contains foreign keys linked to dimension tables.",
+    "date": "May 2026"
+  },
+  {
+    "id": 8,
+    "category": "ETL",
+    "title": "What is a Dimension Table?",
+    "description": "Understand how dimension tables provide reporting context.",
+    "content": "Dimension tables store descriptive attributes such as customer, product or location information. They help users analyze and filter fact table data.",
+    "date": "May 2026"
+  },
+  {
+    "id": 9,
+    "category": "ETL",
+    "title": "What is a Surrogate Key?",
+    "description": "Learn how surrogate keys uniquely identify warehouse records.",
+    "content": "A surrogate key is an artificial key generated in the data warehouse to uniquely identify dimension table records independently of source system keys.",
+    "date": "May 2026"
+  },
+  {
+    "id": 10,
+    "category": "ETL",
+    "title": "What is a Business Key?",
+    "description": "Understand natural identifiers used in ETL systems.",
+    "content": "A business key is a natural identifier from the source system such as customer ID or product ID used to track records.",
+    "date": "May 2026"
+  },
+  {
+    "id": 11,
+    "category": "ETL",
+    "title": "What is Source to Target Mapping?",
+    "description": "Learn how source data maps to target warehouse structures.",
+    "content": "Source to target mapping defines how source fields are transformed and loaded into target fields in ETL systems.",
+    "date": "May 2026"
+  },
+  {
+    "id": 12,
+    "category": "ETL",
+    "title": "What is Data Reconciliation?",
+    "description": "Understand how source and target data are compared.",
+    "content": "Data reconciliation compares source and target data to ensure records are loaded correctly without missing or extra records.",
+    "date": "May 2026"
+  },
+  {
+    "id": 13,
+    "category": "ETL",
+    "title": "What is Data Integrity Testing?",
+    "description": "Learn how relationships and consistency are validated.",
+    "content": "Data integrity testing validates primary and foreign key relationships and ensures referential integrity between warehouse tables.",
+    "date": "May 2026"
+  },
+  {
+    "id": 14,
+    "category": "ETL",
+    "title": "What is Duplicate Data Validation?",
+    "description": "Understand duplicate checks in ETL pipelines.",
+    "content": "Duplicate data validation identifies repeated records using SQL queries and business keys to ensure uniqueness.",
+    "date": "May 2026"
+  },
+  {
+    "id": 15,
+    "category": "ETL",
+    "title": "What is NULL Validation?",
+    "description": "Learn how ETL systems validate mandatory fields.",
+    "content": "NULL validation checks whether mandatory fields contain missing values and ensures complete data loading.",
+    "date": "May 2026"
+  },
+  {
+    "id": 16,
+    "category": "ETL",
+    "title": "What is Regression Testing in ETL?",
+    "description": "Understand regression testing after ETL changes.",
+    "content": "Regression testing verifies that existing ETL functionality continues working correctly after modifications or enhancements.",
+    "date": "May 2026"
+  },
+  {
+    "id": 17,
+    "category": "ETL",
+    "title": "What is a Star Schema?",
+    "description": "Learn star schema design in data warehouses.",
+    "content": "Star schema contains one fact table connected directly to multiple dimension tables for efficient querying and reporting.",
+    "date": "May 2026"
+  },
+  {
+    "id": 18,
+    "category": "ETL",
+    "title": "What is Snowflake Schema?",
+    "description": "Understand normalized warehouse schema structures.",
+    "content": "Snowflake schema is a normalized version of star schema where dimension tables are split into multiple related tables.",
+    "date": "May 2026"
+  },
+  {
+    "id": 19,
+    "category": "ETL",
+    "title": "What is Full Load?",
+    "description": "Learn how complete data loads work in ETL.",
+    "content": "Full load transfers all records from the source to the target system and is commonly used during initial loading.",
+    "date": "May 2026"
+  },
+  {
+    "id": 20,
+    "category": "ETL",
+    "title": "What is Incremental Load?",
+    "description": "Understand incremental loading concepts and benefits.",
+    "content": "Incremental load transfers only new or updated records after the initial full load to improve performance.",
+    "date": "May 2026"
+  },
+  {
+    "id": 21,
+    "category": "ETL",
+    "title": "What is a Data Warehouse?",
+    "description": "Learn about centralized repositories for analytics.",
+    "content": "A data warehouse stores integrated historical data from multiple sources optimized for reporting and business intelligence.",
+    "date": "May 2026"
+  },
+  {
+    "id": 22,
+    "category": "ETL",
+    "title": "What is a Data Mart?",
+    "description": "Understand departmental subsets of data warehouses.",
+    "content": "A data mart is a smaller subset of a data warehouse focused on a specific department such as sales or finance.",
+    "date": "May 2026"
+  },
+  {
+    "id": 23,
+    "category": "ETL",
+    "title": "What is Referential Integrity?",
+    "description": "Learn how relationships between tables are maintained.",
+    "content": "Referential integrity ensures foreign keys correctly match primary keys and prevents orphan records.",
+    "date": "May 2026"
+  },
+  {
+    "id": 24,
+    "category": "ETL",
+    "title": "What is Data Truncation?",
+    "description": "Understand data loss caused by column length issues.",
+    "content": "Data truncation occurs when incoming data exceeds the defined column size causing extra characters to be cut.",
+    "date": "May 2026"
+  },
+  {
+    "id": 25,
+    "category": "ETL",
+    "title": "What is Data Aggregation?",
+    "description": "Learn aggregation concepts used in reporting.",
+    "content": "Data aggregation summarizes detailed data using operations such as SUM, COUNT and AVG for reporting purposes.",
+    "date": "May 2026"
+  },
+  {
+    "id": 26,
+    "category": "ETL",
+    "title": "What is ETL Validation?",
+    "description": "Understand validation of ETL processes and pipelines.",
+    "content": "ETL validation verifies data movement, transformation rules and correctness between source and target systems.",
+    "date": "May 2026"
+  },
+  {
+    "id": 27,
+    "category": "ETL",
+    "title": "What are Common ETL Defects?",
+    "description": "Learn common ETL issues and defects.",
+    "content": "Common ETL defects include missing records, duplicate data, incorrect transformations and datatype mismatches.",
+    "date": "May 2026"
+  },
+  {
+    "id": 28,
+    "category": "ETL",
+    "title": "What is Data Profiling?",
+    "description": "Understand analysis of source data structure and quality.",
+    "content": "Data profiling analyzes data formats, patterns and inconsistencies to improve ETL design and data quality.",
+    "date": "May 2026"
+  },
+  {
+    "id": 29,
+    "category": "ETL",
+    "title": "What is Batch Processing?",
+    "description": "Learn how large datasets are processed together.",
+    "content": "Batch processing handles large volumes of data together at scheduled intervals in ETL pipelines.",
+    "date": "May 2026"
+  },
+  {
+    "id": 30,
+    "category": "ETL",
+    "title": "What is Real-Time ETL?",
+    "description": "Understand streaming and real-time data integration.",
+    "content": "Real-time ETL continuously processes data immediately after changes occur to support live analytics.",
+    "date": "May 2026"
+  },
+  {
+    "id": 31,
+    "category": "ETL",
+    "title": "How Do You Validate Record Counts?",
+    "description": "Learn record count validation techniques in ETL.",
+    "content": "Record counts from source and target systems are compared using SQL COUNT queries to ensure completeness.",
+    "date": "May 2026"
+  },
+  {
+    "id": 32,
+    "category": "ETL",
+    "title": "How Do You Validate Transformations?",
+    "description": "Understand validation of transformation logic and rules.",
+    "content": "Transformation validation compares transformed data against expected business logic using SQL queries and mappings.",
+    "date": "May 2026"
+  },
+  {
+    "id": 33,
+    "category": "ETL",
+    "title": "How Do You Check Duplicates?",
+    "description": "Learn duplicate detection techniques using SQL.",
+    "content": "GROUP BY and COUNT queries are commonly used to identify duplicate records during ETL testing.",
+    "date": "May 2026"
+  },
+  {
+    "id": 34,
+    "category": "ETL",
+    "title": "How Do You Validate Incremental Loads?",
+    "description": "Understand validation of incremental loading logic.",
+    "content": "Incremental load validation checks whether only new or modified records are loaded without duplication.",
+    "date": "May 2026"
+  },
+  {
+    "id": 35,
+    "category": "ETL",
+    "title": "How Do You Test Large Data Loads?",
+    "description": "Learn testing strategies for huge ETL datasets.",
+    "content": "Large data loads are validated using sampling techniques, performance monitoring and SQL record count checks.",
+    "date": "May 2026"
+  },
+  {
+    "id": 36,
+    "category": "ETL",
+    "title": "What is Data Lineage?",
+    "description": "Understand how data flow is tracked in ETL systems.",
+    "content": "Data lineage tracks where data originates, how it transforms and where it moves throughout ETL pipelines.",
+    "date": "May 2026"
+  },
+  {
+    "id": 37,
+    "category": "ETL",
+    "title": "What is Metadata in ETL?",
+    "description": "Learn how metadata describes structures and mappings.",
+    "content": "Metadata describes table structures, transformation rules and mappings used by ETL tools and systems.",
+    "date": "May 2026"
+  },
+  {
+    "id": 38,
+    "category": "ETL",
+    "title": "What is Data Warehouse Testing?",
+    "description": "Understand validation of warehouse systems and reports.",
+    "content": "Data warehouse testing validates warehouse data, ETL loading and schema relationships for accurate reporting.",
+    "date": "May 2026"
+  },
+  {
+    "id": 39,
+    "category": "ETL",
+    "title": "What is Job Scheduling in ETL?",
+    "description": "Learn how ETL jobs are automated and managed.",
+    "content": "Job scheduling automates ETL workflow execution at predefined times while maintaining dependencies.",
+    "date": "May 2026"
+  },
+  {
+    "id": 40,
+    "category": "ETL",
+    "title": "What is Partitioning?",
+    "description": "Understand partitioning for large warehouse tables.",
+    "content": "Partitioning divides large tables into smaller pieces to improve performance and reduce query scan time.",
+    "date": "May 2026"
+  },
+  {
+    "id": 41,
+    "category": "ETL",
+    "title": "What is Indexing?",
+    "description": "Learn how indexes improve ETL query performance.",
+    "content": "Indexes improve query performance by reducing table scans and enabling faster data retrieval.",
+    "date": "May 2026"
+  },
+  {
+    "id": 42,
+    "category": "ETL",
+    "title": "What is ETL Job Failure?",
+    "description": "Understand ETL failures and troubleshooting approaches.",
+    "content": "ETL job failure occurs when a workflow stops unexpectedly due to data issues, system failures or connectivity problems.",
+    "date": "May 2026"
+  },
+  {
+    "id": 43,
+    "category": "ETL",
+    "title": "What is Error Handling in ETL?",
+    "description": "Learn how ETL systems manage invalid data.",
+    "content": "Error handling manages invalid records, logs failures and stores rejected data for troubleshooting and recovery.",
+    "date": "May 2026"
+  },
+  {
+    "id": 44,
+    "category": "ETL",
+    "title": "What is Data Latency?",
+    "description": "Understand delays between source and warehouse updates.",
+    "content": "Data latency is the delay between source system updates and warehouse refreshes affecting reporting freshness.",
+    "date": "May 2026"
+  },
+  {
+    "id": 45,
+    "category": "ETL",
+    "title": "What is Change Data Capture (CDC)?",
+    "description": "Learn how CDC tracks changed records efficiently.",
+    "content": "CDC identifies updated or new source records so only changed data is processed during incremental loading.",
+    "date": "May 2026"
+  },
+  {
+    "id": 46,
+    "category": "ETL",
+    "title": "What is a Data Validation Rule?",
+    "description": "Understand validation rules for accurate ETL data.",
+    "content": "Data validation rules ensure proper formats, valid values and consistent business logic during ETL transformations.",
+    "date": "May 2026"
+  },
+  {
+    "id": 47,
+    "category": "ETL",
+    "title": "What is an Audit Table in ETL?",
+    "description": "Learn how ETL audit tables monitor workflows.",
+    "content": "Audit tables track ETL job execution details such as record counts, timestamps and job status information.",
+    "date": "May 2026"
+  },
+  {
+    "id": 48,
+    "category": "ETL",
+    "title": "What is Data Masking?",
+    "description": "Understand protection of sensitive information in ETL.",
+    "content": "Data masking hides confidential information such as SSN or credit card details in testing environments.",
+    "date": "May 2026"
+  },
+  {
+    "id": 49,
+    "category": "ETL",
+    "title": "What is ETL Performance Tuning?",
+    "description": "Learn optimization techniques for ETL performance.",
+    "content": "ETL performance tuning improves efficiency by optimizing queries, transformations, indexing and parallel processing.",
+    "date": "May 2026"
+  },
+  {
+    "id": 50,
+    "category": "ETL",
+    "title": "What are ETL Tools?",
+    "description": "Understand popular ETL tools used in the industry.",
+    "content": "ETL tools such as Informatica, Talend and DataStage automate extraction, transformation and loading processes efficiently.",
+    "date": "May 2026"
   }
 ]
-
+```
